@@ -48,8 +48,8 @@
                     <h2>Change Password</h2>
 
 
-                    <input type="password" id="oldPassword" name="oldPassword" placeholder="Current password" required>
-                    <input type="password" id="newPassword" name="newPassword" placeholder="New password" required>
+                    <input type="password" id="oldPassword" name="oldPassword" placeholder="New Password" required>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Re-Enter New password" required>
 
 
                     <button type="submit" class="btn-login">Confirm</button>
