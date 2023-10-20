@@ -13,11 +13,6 @@ $oldPassword = $_POST['oldPassword'] ?? "";
 
 $hashed_password = password_hash($newPassword, PASSWORD_DEFAULT);
 
-    //Checker if the form have a data
-    if (empty($_POST['oldPassword']) || empty($_POST['newPassword'])) {
-        exit("Please fill out both Fields");
-    }
-
 if (isset($_SESSION["username"])) {
 
     try {
@@ -33,11 +28,14 @@ if (isset($_SESSION["username"])) {
         $statement = "UPDATE Members SET PASSWORD ='$hashed_password' WHERE ID ='$memberID'";
         $dbcon->exec($statement);
 
-        $_SESSION['Status'] = "You have been logout";
+        $_SESSION['StatusSuccess'] = "PasswordChanged";
         header("location: ../Pages/login.php");
 
            } else {
-            exit("Password Not Match");
+
+            $_SESSION['StatusError'] = "Password not Match.";
+            header("location: ../Pages/change-pass.php");
+
            }
 
        } catch(PDOException $e) {

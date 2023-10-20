@@ -7,10 +7,6 @@ $dbusername = "admin";
 $dbname = "UserAccounts";
 $dbpassword = "ilovecookies696969";
 
-
-   
-   
-
     try {
          //Database connection
         $dbcon = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
@@ -27,12 +23,13 @@ $dbpassword = "ilovecookies696969";
 
                 
                 $_SESSION["username"] = $_POST["username"];
-                $_SESSION['Status'] = "Welcome," . $_SESSION["username"];
+            //    $_SESSION['Status'] = "Welcome," . $_SESSION["username"];
                 $_SESSION["UserID"] = $checkusers['ID'];
                 header("location: ../Pages/change-pass.php");
 
             } else {
-                exit ($_SESSION['Status'] = "Incorrect Details, Please Double Check");
+                $_SESSION['StatusError'] = "Incorrect Details, Please Double Check";
+                header("location: ../Pages/login.php");
             }
 
         } catch(PDOException $e) {

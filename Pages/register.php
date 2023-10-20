@@ -81,6 +81,17 @@
                     <button type="submit" class="btn-login">Sign up</button>
                     <a href="../Pages/login.php" class="backbtn">Back</a>
 
+                    <div class="notifier-error">
+                        <?php
+                            session_start(); 
+                            if (isset($_SESSION['StatusError'])) {
+                            
+                                echo $_SESSION['StatusError']; 
+                                unset($_SESSION['StatusError']);
+                            }
+                            ?>
+                    </div>
+
                 </div>
             </form>
         </div>

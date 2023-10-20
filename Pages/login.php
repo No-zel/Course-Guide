@@ -77,20 +77,20 @@
                     <div class="notifier-error">
                         <?php
                             session_start(); 
-                            if (isset($_SESSION['Status'])) {
+                            if (isset($_SESSION['StatusError'])) {
                             
-                                echo $_SESSION['Status']; 
-                                unset($_SESSION['Status']);
+                                echo $_SESSION['StatusError']; 
+                                unset($_SESSION['StatusError']);
                             }
                             ?>
                         </div>
 
                         <div class="notifier-success">
                         <?php
-                            if (isset($_SESSION['Status'])) {
+                            if (isset($_SESSION['StatusSuccess'])) {
                             
-                                echo $_SESSION['Status']; 
-                                unset($_SESSION['Status']);
+                                echo $_SESSION['StatusSuccess']; 
+                                unset($_SESSION['StatusSuccess']);
                             }
                             ?>
                         </div>

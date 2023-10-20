@@ -12,12 +12,6 @@ $dbpassword = "ilovecookies696969";
     $accpassword = $_POST['password']  ?? "";
     $accrepassword = $_POST['repassword']  ?? "";
     
-    
-
-    //Checker if the password is not match
-    if ( $accpassword != $accrepassword) {
-      exit("Password not match");
-    } 
 
     //Hashing the password for protection
     $hashed_password = password_hash($accpassword, PASSWORD_DEFAULT);
@@ -34,15 +28,29 @@ $dbpassword = "ilovecookies696969";
         $checkusers = $statement->fetch();
 
         if ($checkusers) {
+
           //If theres a duplicated it will error
-          exit("Theres a Existing User");
+          $_SESSION['StatusError'] = "Theres a existing user.";
+          header("location: ../Pages/register.php");
+
         } else {
-          //if theres not the user will be added
+
+          if ( $accpassword != $accrepassword) {
+
+            $_SESSION['StatusError'] = "Password Not Match.";
+            header("location: ../Pages/register.php");
+
+          } else {
+
+                      //if theres not the user will be added
           $sql = "INSERT INTO Members (`USERNAME`, `EMAIL`, `PASSWORD`) VALUES ('$accusername', '$accemail', '$hashed_password')";
           $dbcon->exec($sql);
 
-          $_SESSION['Status'] = "Account Registered";
+          $_SESSION['StatusSuccess'] = "Account Registered";
           header("location: ../Pages/login.php");
+
+          }
+
         }
 
       } catch(PDOException $e) {

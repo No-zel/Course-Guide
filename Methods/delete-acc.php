@@ -20,7 +20,7 @@ $memberID = $_SESSION['UserID'];
         $statement = "DELETE FROM Members WHERE ID ='$memberID'";
         $dbcon->exec($statement);
 
-        $_SESSION['Status'] = "Account Delete, Please Login Again";
+        $_SESSION['StatusSuccess'] = "Account Deleted";
         header("location: ../Pages/login.php");
 
         } catch(PDOException $e) {

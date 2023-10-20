@@ -21,17 +21,6 @@
 
 <body>
 
-    <div class="notifier">
-        <?php
-        session_start(); 
-        if (isset($_SESSION['Status'])) {
-          
-            echo $_SESSION['Status']; 
-            unset($_SESSION['Status']);
-        }
-        ?>
-    </div>
-
     <header>
         <nav>
             <div class="logo"> <a href="../main.html"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
@@ -57,8 +46,8 @@
                     <h2>Change Password</h2>
 
 
-                    <input type="text" id="oldPassword" name="oldPassword" placeholder="Current password">
-                    <input type="text" id="newPassword" name="newPassword" placeholder="New password">
+                    <input type="password" id="oldPassword" name="oldPassword" placeholder="Current password" required>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="New password" required>
 
 
                     <button type="submit" class="btn-login">Confirm</button>
@@ -67,6 +56,16 @@
                         <span class="delete"><a href="../Methods/logout.php">Log out</a></span>
                     </div>
 
+                    <div class="notifier-error">
+                        <?php
+                            session_start(); 
+                            if (isset($_SESSION['StatusError'])) {
+                            
+                                echo $_SESSION['StatusError']; 
+                                unset($_SESSION['StatusError']);
+                            }
+                            ?>
+                        </div>
                 </div>
             </form>
         </div>
