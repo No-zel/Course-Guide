@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +84,6 @@
 
                     <div class="notifier-error">
                         <?php
-                            session_start(); 
                             if (isset($_SESSION['StatusError'])) {
                             
                                 echo $_SESSION['StatusError']; 
