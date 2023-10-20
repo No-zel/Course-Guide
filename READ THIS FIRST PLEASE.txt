@@ -1,0 +1,5 @@
+Open Apache first in Xampp first
+
+then go to this link: http://localhost/Course-Guide/Pages/login.html
+
+Enjoy, Thank you!
