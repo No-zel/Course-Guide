@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if (isset($_SESSION['UserID'])) {
+    header('location:change-pass.php');
+}
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
