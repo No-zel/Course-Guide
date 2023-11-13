@@ -7,32 +7,17 @@ $dbusername = "admin";
 $dbname = "UserAccounts";
 $dbpassword = "ilovecookies696969";
 //CONNETION
-$conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
-$sql = "SELECT USERNAME, ACTION, datatime FROM UsersLog";
-$result = $conn->query($sql);
-$logData = [];
-while ($row = $result->fetch_assoc()) {
-    $logData[] = [
-        "user" => $row['USERNAME'],
-        "activity" => $row['ACTION'],
-        "date" => $row['datatime'] 
-    ];
+try {
+    $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "SELECT USERNAME, ACTION, datatime FROM UsersLog";
+    $result = $conn->query($sql);
+    $logData = $result->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
 
-
-// Sample DB
-// $logData = [
-//     ["user" => "Bob1", "activity" => "login", "date" => "2023-11-13 08:30:00"],
-//     ["user" => "Bob2", "activity" => "login", "date" => "2023-11-13 09:15:00"],
-//     ["user" => "Bob3", "activity" => "logout", "date" => "2023-11-13 12:45:00"],
-//     ["user" => "Bob4", "activity" => "login", "date" => "2023-11-13 08:30:00"],
-//     ["user" => "Bob5", "activity" => "login", "date" => "2023-11-13 09:15:00"],
-//     ["user" => "Bob6", "activity" => "logout", "date" => "2023-11-13 12:45:00"],
-//     ["user" => "Bob7", "activity" => "login", "date" => "2023-11-13 08:30:00"],
-//     ["user" => "Bob8", "activity" => "login", "date" => "2023-11-13 09:15:00"],
-//     ["user" => "Bob9", "activity" => "logout", "date" => "2023-11-13 12:45:00"],
-//     ["user" => "Bob10", "activity" => "login", "date" => "2023-11-13 08:30:00"],
-// ];
 $maxpage = 5;
 $page = isset($_GET['pageindex']) ? intval($_GET['pageindex']):1;
 
@@ -69,9 +54,9 @@ $totalPages = ceil(count($logData) / $maxpage);
 
     <?php foreach ($logs as $entry): ?>
         <tr>
-            <td><?= $entry['user'] ?></td>
-            <td><?= $entry['activity'] ?></td>
-            <td><?= $entry['date'] ?></td>
+            <td><?= $entry['USERNAME'] ?></td>
+            <td><?= $entry['ACTION'] ?></td>
+            <td><?= $entry['datatime'] ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
