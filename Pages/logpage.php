@@ -7,11 +7,11 @@ $dbusername = "admin";
 $dbname = "UserAccounts";
 $dbpassword = "ilovecookies696969";
 //CONNETION
-$conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
-$sql = "SELECT USERNAME, ACTION, datatime FROM UsersLog";
-$result = $conn->query($sql);
-$logData = [];
-while ($row = $result->fetch_assoc()) {
+    $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
+    $sql = "SELECT USERNAME, ACTION, datatime FROM UsersLog";
+    $result = $conn->query($sql);
+    $logData = [];
+    while ($row = $result->fetch_assoc()) {
     $logData[] = [
         "user" => $row['USERNAME'],
         "activity" => $row['ACTION'],
