@@ -55,11 +55,14 @@
         <div class="hero-title">
             <h1>Discover Your Official
                 Course with CGuide AI</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem accusantium accusamus rem facilis
-                voluptatem minima!</p>
-
-            <div class="start">
-                <button>Get started</button>
+            <div class="form">
+    
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem accusantium accusamus rem facilis
+                    voluptatem minima!</p>
+    
+                <div class="start">
+                    <button>Get started</button>
+                </div>
             </div>
 
         </div>
@@ -68,7 +71,19 @@
     </section>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+
+        let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}});
+    
+        let flagPoles = CSSRulePlugin.getRule(".hero-section:before");
+
+        tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.2})
+        tl.to('.form', { 'clip-path': 'polygon(0% 105%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0}, "-=2")
+        tl.to('nav', { opacity: 1}, "-=1")
+    </script>
 </body>
 
 </html>
