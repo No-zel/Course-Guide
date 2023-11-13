@@ -117,4 +117,18 @@
     </section>
 </body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}});
+    
+        let flagPoles = CSSRulePlugin.getRule(".hero-section:before");
+
+      
+        tl.to('nav', { opacity: 1}, "-=1")
+    </script>
+
+
 </html>
