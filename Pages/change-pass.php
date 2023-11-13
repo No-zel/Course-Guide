@@ -17,6 +17,9 @@ if (!isset($_SESSION['UserID'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  
+
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +28,15 @@ if (!isset($_SESSION['UserID'])) {
 
     <title> CGuide | Change password</title>
 </head>
+<style>
+    .fa-solid {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+</style>
 
 
 
@@ -37,8 +49,14 @@ if (!isset($_SESSION['UserID'])) {
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
-
+                <!-- <ul class="dropdown">Settings
+                    <li>Logs</li>
+                    <li>Log out</li>
+                </ul> -->
+             
+                   
             </ul>
+
             <div class="hamburger">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -89,5 +107,24 @@ if (!isset($_SESSION['UserID'])) {
 
     </section>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}});
+    
+        let flagPoles = CSSRulePlugin.getRule(".hero-section:before");
+
+      
+        tl.to('nav', { opacity: 1}, "-=1")
+
+
+       
+     
+        
+      
+       
+    </script>
 
 </html>
