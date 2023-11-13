@@ -27,7 +27,8 @@ $dbpassword = "ilovecookies696969";
 
                 //lOGIN LOGS
                 $loginuser = $checkusers['USERNAME'];
-                $Hlogs =  "INSERT INTO UsersLog (`USERNAME`,`ACTION`, `datatime`) VALUES ('$loginuser', 'LOGIN', 'CURRENT_TIMESTAMP()')";
+                $currentDateTime = date("Y-m-d H:i:s");
+                $Hlogs =  "INSERT INTO UsersLog (`USERNAME`,`ACTION`, `datatime`) VALUES ('$loginuser', 'LOGIN', '$currentDateTime')";
                 $dbcon->exec($Hlogs);
 
                 //Directory after the login
