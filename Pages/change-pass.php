@@ -78,6 +78,7 @@ if (!isset($_SESSION['UserID'])) {
 
 
                     <button type="submit" class="btn-login">Confirm</button>
+                    <a href="../Pages/logpage.php"> LOGS </a>
                     <div class="options">
                         <span class="delete"> <a href="../Methods/delete-acc.php">Delete account</a></span>
                         <span class="delete"><a href="../Methods/logout.php">Log out</a></span>
