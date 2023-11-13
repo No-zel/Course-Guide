@@ -18,10 +18,10 @@ $dbpassword = "ilovecookies696969";
         $state->execute([$_POST['username']]);
         $checkusers = $state->fetch();
         
-        //Account Checker
+        //Checker if theres a user in the database and if the password is the same with the DATABASE
         if ($checkusers && password_verify($_POST['password'], $checkusers['PASSWORD'])) {
 
-                
+
                 $_SESSION["username"] = $_POST["username"];
             //    $_SESSION['Status'] = "Welcome," . $_SESSION["username"];
                 $_SESSION["UserID"] = $checkusers['ID'];

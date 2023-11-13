@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php session_start();
+
+if (isset($_SESSION['UserID'])) {
+    header('location: ../Pages/login.php');
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +22,7 @@
     <link rel="stylesheet" href="style.css">
 
 
-    <title>CGuide | Change password</title>
+    <title> CGuide | Change password</title>
 </head>
 
 
