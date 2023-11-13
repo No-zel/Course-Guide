@@ -1,7 +1,8 @@
 <?php session_start();
 
-if (isset($_SESSION['UserID'])) {
-    header('location: ../Pages/login.php');
+if (!isset($_SESSION['UserID'])) {
+    $_SESSION['StatusError'] = "Please login first";
+    header('location: login.php');
 }
 
 ?>

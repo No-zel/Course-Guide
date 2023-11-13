@@ -21,23 +21,27 @@ $dbpassword = "ilovecookies696969";
         //Checker if theres a user in the database and if the password is the same with the DATABASE
         if ($checkusers && password_verify($_POST['password'], $checkusers['PASSWORD'])) {
 
-
+                //Transfering User Info to Variables
                 $_SESSION["username"] = $_POST["username"];
-            //    $_SESSION['Status'] = "Welcome," . $_SESSION["username"];
                 $_SESSION["UserID"] = $checkusers['ID'];
+
+                //lOGIN LOGS
+                $loginuser = $checkusers['USERNAME'];
+                $Hlogs =  "INSERT INTO UsersLog (`USERNAME`,`ACTION`, `datatime`) VALUES ('$loginuser', 'LOGIN', 'CURRENT_TIMESTAMP()')";
+                $dbcon->exec($Hlogs);
+
+                //Directory after the login
                 header("location: ../Pages/change-pass.php");
 
             } else {
+                //Error Catcher
                 $_SESSION['StatusError'] = "Incorrect Details, Please Double Check";
                 header("location: ../Pages/login.php");
             }
-
         } catch(PDOException $e) {
         //Database Error
         echo "Connection failed: " . $e->getMessage();
-
       }
         //Close DB
         $dbcon = null;
-
 ?>
