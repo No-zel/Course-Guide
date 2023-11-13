@@ -24,21 +24,14 @@ if (!isset($_SESSION['UserID'])) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="change-pass-nav.css">
 
 
     <title> CGuide | Change password</title>
 </head>
-<style>
-    .fa-solid {
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
+
   
-</style>
-
-
 
 <body>
 
@@ -49,10 +42,13 @@ if (!isset($_SESSION['UserID'])) {
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
-                <!-- <ul class="dropdown">Settings
-                    <li>Logs</li>
-                    <li>Log out</li>
-                </ul> -->
+                <li><a href="#">Settings</a>
+                <ul class="dropdown">
+                    <li class="option"><a href="#">Logs</a></li>
+                    <li class="option"><a href="#">Log out</a></li>
+                </ul>
+            </li>
+                
              
                    
             </ul>
@@ -78,7 +74,7 @@ if (!isset($_SESSION['UserID'])) {
 
 
                     <button type="submit" class="btn-login">Confirm</button>
-                    <a href="../Pages/logpage.php"> LOGS </a>
+                  
                     <div class="options">
                         <span class="delete"> <a href="../Methods/delete-acc.php">Delete account</a></span>
                         <span class="delete"><a href="../Methods/logout.php">Log out</a></span>
