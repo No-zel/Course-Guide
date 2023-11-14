@@ -1,5 +1,6 @@
 <?php session_start();
 
+//Checker if someones is by-passing the website (not login)
 if (!isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "Please login first";
     header('location: login.php');
