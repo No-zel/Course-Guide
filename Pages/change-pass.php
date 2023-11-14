@@ -45,7 +45,7 @@ if (!isset($_SESSION['UserID'])) {
                 <li><a href="#">Settings</a>
                 <ul class="dropdown">
                     <li class="option"><a href="#">Logs</a></li>
-                    <li class="option"><a href="#">Log out</a></li>
+                    <li class="option"><a href="../Methods/logout.php">Log out</a></li>
                 </ul>
             </li>
                 
@@ -77,7 +77,6 @@ if (!isset($_SESSION['UserID'])) {
                   
                     <div class="options">
                         <span class="delete"> <a href="../Methods/delete-acc.php">Delete account</a></span>
-                        <span class="delete"><a href="../Methods/logout.php">Log out</a></span>
                     </div>
 
                     <div class="notifier-error">
