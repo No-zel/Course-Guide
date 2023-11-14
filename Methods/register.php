@@ -43,7 +43,7 @@ $dbpassword = "ilovecookies696969";
           } else {
 
                       //if theres not the user will be added
-          $sql = "INSERT INTO Members (`USERNAME`, `EMAIL`, `PASSWORD`) VALUES ('$accusername', '$accemail', '$hashed_password')";
+          $sql = "INSERT INTO Members (`TYPEOFUSER`, `USERNAME`, `EMAIL`, `PASSWORD`) VALUES ('2', '$accusername', '$accemail', '$hashed_password')";
           $dbcon->exec($sql);
 
           $_SESSION['StatusSuccess'] = "Account Registered";

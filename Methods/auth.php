@@ -24,6 +24,7 @@ $dbpassword = "ilovecookies696969";
                 //Transfering User Info to Variables
                 $_SESSION["username"] = $_POST["username"];
                 $_SESSION["UserID"] = $checkusers['ID'];
+                $_SESSION["TYPE"] = $checkusers['TYPEOFUSER'];
 
                 //lOGIN LOGS
                 $loginuser = $checkusers['USERNAME'];
