@@ -22,7 +22,7 @@ $dbpassword = "ilovecookies696969";
         if ($checkusers && password_verify($_POST['password'], $checkusers['PASSWORD'])) {
 
                 //Transfering User Info to Variables
-                $_SESSION["username"] = $_POST["username"];
+                $_SESSION["username"] = $checkusers['USERNAME'];
                 $_SESSION["UserID"] = $checkusers['ID'];
                 $_SESSION["TYPE"] = $checkusers['TYPEOFUSER'];
 

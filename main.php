@@ -63,9 +63,10 @@ if (isset($_SESSION['UserID'])) {
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
                 <div class="settings">
-                    <li><a href="#">Settings</a>
+                    <li><a href="#"> <?php echo $_SESSION["username"] ?></a>
                         <ul class="dropdown">
                             <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
+                            <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
                             <li class="option"><a href="Methods/logout.php">Log out</a></li>
                         </ul>
                     </li>
