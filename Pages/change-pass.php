@@ -39,9 +39,9 @@ if (!$_SESSION['UserID']) {
 
     <header>
         <nav>
-            <div class="logo"> <a href="../main.html"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
+            <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="../main.php">Home</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Settings</a>

@@ -27,13 +27,13 @@
 
     <header>
         <nav>
-            <div class="logo"> <a href="../main.html"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
+            <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
 
             <ul class="sidebar" id="sidebar">
                 <div class="close-btn close">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                <li><a href="#">Home</a></li>
+                <li><a href="../main.php">Home</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
                 <div class="log-in-btn sidebar-logout"><button><a href="./Pages/login.php">Log in</a></button></div>
