@@ -46,7 +46,7 @@ if (!$_SESSION['UserID']) {
                 <li><a href="#">About</a></li>
                 <li><a href="#">Settings</a>
                 <ul class="dropdown">
-                    <li class="option"><a href="#">Logs</a></li>
+                    <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
                     <li class="option"><a href="../Methods/logout.php">Log out</a></li>
                 </ul>
             </li>
