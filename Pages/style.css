@@ -68,6 +68,7 @@ ul {
     display: flex;
     list-style: none;
     font-weight: 100;
+    align-items: center;
     padding-right: 15px;
     gap: 30px;
     color: var(--white-accent-color);

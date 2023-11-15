@@ -1,0 +1,51 @@
+.settings{
+    display: none;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    align-items: center;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    width: 100%;
+    transition: all 0.6s ease;
+}
+
+ul li ul.dropdown {
+    border-radius: 12px;
+    box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+    width: 38px;
+    left: -7px;
+    display: flex;
+    flex-direction: row;
+    background: var(--primary-background-color);
+    border: 1px solid var(--dark-outline-color);
+    ;
+    padding: 10px 25px;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+ul li a:hover {
+    background: var(--dark-outline-color);
+    border-radius: 3px;
+
+
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+
+}
+
+.option a {
+    padding: 10px 15px;
+    transform: translateX(-30px);
+}
