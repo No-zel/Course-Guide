@@ -94,7 +94,7 @@ $totalPages = ceil(count($logData) / $maxpage);
        
           <th colspan="3" class="log-history">Log History</th>
 
-        <tr>
+        <tr class="responsive-display-none">
             <th>User</th>
             <th>Activity</th>
             <th>Date</th>
@@ -102,9 +102,9 @@ $totalPages = ceil(count($logData) / $maxpage);
         </thead>
         <?php foreach ($logs as $entry): ?>
             <tr>
-                <td><?= $entry['USERNAME'] ?></td>
-                <td><?= $entry['ACTION'] ?></td>
-                <td><?= $entry['datatime'] ?></td>
+                <td data-title="Username" ><?= $entry['USERNAME'] ?></td>
+                <td data-title="Activity"><?= $entry['ACTION'] ?></td>
+                <td data-title="Date"><?= $entry['datatime'] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>

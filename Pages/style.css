@@ -587,11 +587,11 @@ table td{
 
 
 
-
-
-
-
-
+@media (max-width: 1000px){
+    .log-container{
+        padding-inline: 25px;
+    }
+}
 
 
 
@@ -615,7 +615,9 @@ table td{
 
 @media (max-width: 530px) {
 
-
+    .log-container{
+        padding-inline: 25px;
+    }
 
     ul {
         display: none;
@@ -653,5 +655,25 @@ table td{
 
     .start button {
         font-size: 15px;
+    }
+}
+
+@media (max-width: 440px){
+    .responsive-display-none{
+        display: none;
+    }
+   
+
+    table td{
+        text-align: right;
+        display: block;
+    }
+    table td::before{
+        content: attr(data-title) ": ";
+        float: left;
+    }
+
+    .pages{
+        display: none;
     }
 }
