@@ -20,20 +20,20 @@ if (!$_SESSION['UserID']) {
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="change-pass-nav.css">
+   
 
 
     <title> CGuide | Change password</title>
 </head>
 
-
-  
 
 <body>
 
@@ -44,7 +44,7 @@ if (!$_SESSION['UserID']) {
                 <li><a href="../main.php">Home</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#"><?php  echo $_SESSION["username"]  ?></a>
+                <li><a href="#"><?php  echo $_SESSION["username"]  ?> | Profile</a>
                 <ul class="dropdown">
                     <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
                     <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
@@ -69,12 +69,30 @@ if (!$_SESSION['UserID']) {
             <form action="../Methods/change-pass.php" method="POST" class="change-container">
 
                 <div class="top-section">
-                    <h2>Change Password</h2>
 
+                    <div class="title-info">
+                        <h3 class="user-account"><?php echo $_SESSION["username"] ?> · CGuide</h3>
+                        <h2 class="system-header"><span>System</span> | Change password</h2>
+                       
+                    </div>
 
+                    <div class="form_each">
+                    <input type="text" id="fname" name="fname" placeholder="First name" required>
+                    </div>
+
+                    <div class="form_each">
+                    <input type="text" id="lname" name="lname" placeholder="Last name" required>
+                    </div>
+
+                    <div class="form_each">
                     <input type="password" id="oldPassword" name="oldPassword" placeholder="New Password" required>
+                    <i class="fa-solid fa-eye-slash" id="show-password-1"></i>
+                        </div>
+                    <div class="form_each">
                     <input type="password" id="newPassword" name="newPassword" placeholder="Re-Enter New password" required>
+                    <i class="fa-solid fa-eye-slash" id="show-password-2"></i>
 
+                    </div>
 
                     <button type="submit" class="btn-login">Confirm</button>
                   
@@ -106,7 +124,9 @@ if (!$_SESSION['UserID']) {
 
     </section>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="../js/password.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
@@ -117,10 +137,6 @@ if (!$_SESSION['UserID']) {
 
       
         tl.to('nav', { opacity: 1}, "-=1")
-
-
-       
-     
         
       
        

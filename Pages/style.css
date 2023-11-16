@@ -7,7 +7,10 @@
     --cardgradient-background: linear-gradient(151deg, rgba(217, 217, 217, 1) 0%, rgba(0, 0, 0, 0) 100%);
     --btnlogin-background-color: #1163DD;
     --dark-outline-color: #3A3A3A;
-
+    --table-header-color: #0F1114;
+    --table-content-color: #09090B;
+    --table-border-color: #222222;
+    --table-text-color: #A5A7B3;
     --desktop-max-width: 980px;
     --hero-title-max-width: 680px;
     --nav-height: 50px;
@@ -88,17 +91,16 @@ li a {
     padding: 5px 25px;
     border-radius: 8px;
     border: none;
+    background: none;
     font-family: 'Poppins';
-    background: rgb(82, 82, 82);
-
-    color: white;
+    color: var(--white-accent-color);
     cursor: pointer;
     outline: 1px solid var(--dark-outline-color);
     transition: all 0.3s ease-in;
 }
 
 .log-in-btn button:hover {
-    background: linear-gradient(-250deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  background: var(--btnlogin-background-color);
 }
 
 .hamburger {
@@ -279,6 +281,7 @@ li a {
 }
 
 .form-login-container input {
+    width: 100%;
     padding: 10px 15px;
     border-radius: 8px;
     border: none;
@@ -300,16 +303,35 @@ li a {
     border-radius: 12px;
     color: var(--white-accent-color);
     outline: 1px solid var(--dark-outline-color);
-    height: 350px;
+    height: 450px;
     max-width: 335px;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.title-info{
+    line-height: 1 !important;
+    padding-top: 15px !important;
+}
+
+.user-account{
+    font-size: 1rem !important;
+    font-weight: 400;
+}
+.system-header{
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+
+}
+.form_each{
+    display: flex;
+    position: relative;
+}
 .change-container input {
     padding: 10px 15px;
     border-radius: 8px;
+    width: 100%;
     border: none;
     font-family: 'Poppins';
     background: rgb(217, 217, 217);
@@ -317,6 +339,24 @@ li a {
     color: white;
     outline: 1px solid var(--dark-outline-color);
 }
+
+
+.form_each .fa-eye-slash {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    color: var(--dark-outline-color);
+    cursor: pointer;
+
+}
+
+.form_each .fa-eye{
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    color: var(--dark-outline-color);
+    cursor: pointer;
+  }
 
 .options {
     display: flex;
@@ -460,6 +500,101 @@ a {
     border-radius: 12px;
     padding: 12px 15px;
 }
+
+
+
+
+
+
+/* Logs CSS Properties ====================================================================== */
+.header-title{
+    display: flex;
+    justify-content: flex-start;
+
+}
+.log-title{
+    font-size: 1rem !important;
+}
+.log-container{
+    display: flex;
+    padding-top: 55px;
+    flex-direction: column;
+    align-items: center;
+    max-width: var(--desktop-max-width);
+    margin: 0 auto;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--white-accent-color);
+    outline: 1px solid var(--table-border-color);
+    padding: 0 20px;
+    border-radius: 12px;
+    box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background: none;
+}
+
+thead tr{
+    background: none;
+    border-bottom: 1px solid var(--table-border-color);
+}
+thead th{
+    font-weight: 500;
+    color: var(--table-text-color);
+}
+
+
+table th,
+table td{
+    font-size: 1rem;
+    text-align: left;
+    padding: 13px 40px;
+    color: var(--table-text-color);
+}
+
+.log-history{
+    background: var(--table-header-color);
+    padding: 15px 40px;
+    border-bottom: 1px solid var(--table-border-color);
+}
+
+table td{
+    border-bottom: 1px solid var(--table-border-color);
+    
+}
+
+.pages {
+    padding-top: 15px;
+}
+.pages a{
+    color: var(--table-text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px;
+    transition: 0.5s ease;
+
+}
+.pages a:hover{
+    background: var(--dark-outline-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

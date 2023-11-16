@@ -7,13 +7,15 @@ session_start(); ?>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,400;1,500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS Styles -->
     <link rel="stylesheet" href="style.css">
+    <!-- Navbar JS -->
     <script src="../js/nav.js" defer></script>
 
     
@@ -24,10 +26,7 @@ session_start(); ?>
 
 
 <body>
-    <!-- Change Pass notifier -->
-  
-
-
+ 
     <header>
         <nav>
             <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
@@ -63,12 +62,17 @@ session_start(); ?>
                 <div class="top-section">
                     <h2>Log in</h2>
 
-                    <input type="text" id="username" name="username" placeholder="Username" required>
 
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <div class="form_each">
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
 
-                  
+                    <div class="form_each">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <i class="fa-solid fa-eye-slash" id="log-in-pass"></i>
+                    </div>
 
+        
                     <button type="submit" class="btn-login">Log in</button>
 
                     <div class="bot-section">
@@ -129,6 +133,25 @@ session_start(); ?>
 
       
         tl.to('nav', { opacity: 1}, "-=1")
+
+        
+        const logshowpass = document.querySelector("#log-in-pass") // icon id
+        const loginpasswordField = document.querySelector("#password") //input id
+    
+
+        //  Log In Password Show function
+        logshowpass.addEventListener("click", function () {
+        this.classList.toggle("fa-eye-slash");
+        
+        this.classList.toggle("fa-eye", !this.classList.contains("fa-eye-slash"));
+        const type = loginpasswordField.getAttribute("type") === "password" ? "text" : "password";
+        loginpasswordField.setAttribute("type", type);
+        }) 
+
+
+
+
+
     </script>
 
 

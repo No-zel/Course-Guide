@@ -45,34 +45,90 @@ $totalPages = ceil(count($logData) / $maxpage);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="./settings.css">
     <title>Log Data</title>
+
 </head>
 <body>
-<h2>Sample Log History</h2>
 
-<table>
-    <tr>
-        <th>User</th>
-        <th>Activity</th>
-        <th>Date</th>
-    </tr>
+     <header>
+        <nav style="opacity: 1 !important;">
+            <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
+            <ul class="sidebar" id="sidebar">
+                <div class="close-btn close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <li><a href="../main.php">Home</a></li>
+                <li><a href="#">Feature</a></li>
+                <li><a href="#">About</a></li>
+               
+            </ul>
 
-    <?php foreach ($logs as $entry): ?>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Feature</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#"><?php  echo $_SESSION["username"]  ?> | Profile</a>
+                <ul class="dropdown">
+                    <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
+                    <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
+                    <li class="option"><a href="../Methods/logout.php">Log out</a></li>
+                </ul>
+            </li>
+            </ul>
+
+            <div class="hamburger " id="open-nav">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="log-container" >
+    
+ 
+    <table>
+       
+        <thead>
+       
+          <th colspan="3" class="log-history">Log History</th>
+
         <tr>
-            <td><?= $entry['USERNAME'] ?></td>
-            <td><?= $entry['ACTION'] ?></td>
-            <td><?= $entry['datatime'] ?></td>
+            <th>User</th>
+            <th>Activity</th>
+            <th>Date</th>
         </tr>
-    <?php endforeach; ?>
-</table>
-
-<!-- Pagination links -->
-<div>
-    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-        <a href="?pageindex=<?= $i ?>"><?= $i ?></a>
-    <?php endfor; ?>
-    <a href="../Pages/change-pass.php"> changepasspage </a>
+        </thead>
+        <?php foreach ($logs as $entry): ?>
+            <tr>
+                <td><?= $entry['USERNAME'] ?></td>
+                <td><?= $entry['ACTION'] ?></td>
+                <td><?= $entry['datatime'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    
+    <!-- Pagination links -->
+    <div class="pages">
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="?pageindex=<?= $i ?>"><?= $i ?></a>
+        <?php endfor; ?>
+        <a href="../Pages/change-pass.php"> Pages </a>
+    </div>
 </div>
+
+<script>
+
+        let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}});
+    
+        let flagPoles = CSSRulePlugin.getRule(".hero-section:before");
+
+      
+        tl.to('nav', { opacity: 1}, "-=1")
+
+
+
+    </script>
 </body>
 </html>
