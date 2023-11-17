@@ -68,15 +68,36 @@
 
                 <div class="top-section">
                     <h2>Create account</h2>
-                    <input type="text" name="email" id="email" placeholder="Email" required>
 
 
-                    <input type="text" name="username" id="username" placeholder="Username" required>
+                    <div class="form_each">
+                        <input type="text" name="name" id="name" placeholder="Name" required>
+                        <input type="text" name="lname" id="lname" placeholder="Last name" required>
+                    </div>
+
+        
+                    <div class="form_each">
+                        
+                        <input type="text" name="email" id="email" placeholder="Email" required>
+                    </div>
 
 
-                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <div class="form_each">
+                        <input type="text" name="username" id="username" placeholder="Username" required>
+                    </div>
 
-                    <input type="password" name="repassword" id="repassword" placeholder="Re-type password" required>
+
+                  <div class="form_each">
+                      <input type="password" name="password" id="password" placeholder="Password" required>
+                      <i class="fa-solid fa-eye-slash" id="show-password-1"></i>
+                  </div>
+
+                    <div class="form_each">
+                        <input type="password" name="repassword" id="repassword" placeholder="Re-type password" required>
+                        <i class="fa-solid fa-eye-slash" id="show-password-2"></i>
+                    </div>
+
+                    
 
 
                     <button type="submit" class="btn-login">Sign up</button>
@@ -107,5 +128,39 @@
 
     </section>
 </body>
+
+        <script> 
+            const showpass = document.querySelector("#show-password-1") // icon id
+            const showpass2 = document.querySelector("#show-password-2")
+
+            const passwordField = document.querySelector("#password") //input id
+            const newpasswordField = document.querySelector("#repassword")
+
+
+
+
+                
+            //  System | New password Show function
+            showpass.addEventListener("click", function () {
+            this.classList.toggle("fa-eye-slash");
+            
+            this.classList.toggle("fa-eye", !this.classList.contains("fa-eye-slash"));
+            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+            passwordField.setAttribute("type", type);
+            })
+
+
+            //  System | Old password Show function
+            showpass2.addEventListener("click", function () {
+            this.classList.toggle("fa-eye-slash");
+            
+            this.classList.toggle("fa-eye", !this.classList.contains("fa-eye-slash"));
+            const type = newpasswordField.getAttribute("type") === "password" ? "text" : "password";
+            newpasswordField.setAttribute("type", type);
+            }) 
+
+
+
+        </script>
 
 </html>

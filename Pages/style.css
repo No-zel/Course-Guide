@@ -328,6 +328,8 @@ li a {
 
 .form_each {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
     position: relative;
 }
 
@@ -391,7 +393,7 @@ li a {
     border-radius: 12px;
     color: var(--white-accent-color);
     outline: 1px solid var(--dark-outline-color);
-    height: 430px;
+    min-height: 485px;
     max-width: 335px;
     width: 100%;
     display: flex;
@@ -420,7 +422,9 @@ input[type="text"]:focus {
     flex-direction: column;
     gap: 15px;
     padding: 0 25px;
+   
 }
+
 
 .notifier-error {
     display: flex;
@@ -624,6 +628,9 @@ table td {
 }
 
 @media (max-width: 530px) {
+    .login-card{
+        padding-inline: 25px;
+    }
 
     .log-container {
         padding-inline: 25px;
@@ -673,6 +680,8 @@ table td {
         display: none;
     }
 
+ 
+ 
 
     table td {
         text-align: right;
