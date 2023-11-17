@@ -100,7 +100,7 @@ li a {
 }
 
 .log-in-btn button:hover {
-  background: var(--btnlogin-background-color);
+    background: var(--btnlogin-background-color);
 }
 
 .hamburger {
@@ -222,10 +222,10 @@ li a {
     color: white;
     text-align: center;
     transition: all 0.3s ease;
-    
+
 }
 
-.form{
+.form {
     clip-path: polygon(0 105%, 100% 100%, 100% 100%, 0% 100%);
     margin: 0 auto;
 }
@@ -310,24 +310,27 @@ li a {
     flex-direction: column;
 }
 
-.title-info{
+.title-info {
     line-height: 1 !important;
     padding-top: 15px !important;
 }
 
-.user-account{
+.user-account {
     font-size: 1rem !important;
     font-weight: 400;
 }
-.system-header{
+
+.system-header {
     font-size: 1.2rem !important;
     font-weight: 600 !important;
 
 }
-.form_each{
+
+.form_each {
     display: flex;
     position: relative;
 }
+
 .change-container input {
     padding: 10px 15px;
     border-radius: 8px;
@@ -350,13 +353,13 @@ li a {
 
 }
 
-.form_each .fa-eye{
+.form_each .fa-eye {
     position: absolute;
     right: 13px;
     bottom: 13px;
     color: var(--dark-outline-color);
     cursor: pointer;
-  }
+}
 
 .options {
     display: flex;
@@ -419,13 +422,14 @@ input[type="text"]:focus {
     padding: 0 25px;
 }
 
-.notifier-error{
+.notifier-error {
     display: flex;
     justify-content: center;
     font-size: 12px;
     color: red;
 }
-.notifier-success{
+
+.notifier-success {
     display: flex;
     justify-content: center;
     font-size: 12px;
@@ -484,7 +488,7 @@ a {
 .title h1 {
     font-size: 70px;
     line-height: 1rem;
-    
+
 }
 
 .title p {
@@ -507,15 +511,17 @@ a {
 
 
 /* Logs CSS Properties ====================================================================== */
-.header-title{
+.header-title {
     display: flex;
     justify-content: flex-start;
 
 }
-.log-title{
+
+.log-title {
     font-size: 1rem !important;
 }
-.log-container{
+
+.log-container {
     display: flex;
     padding-top: 55px;
     flex-direction: column;
@@ -523,7 +529,8 @@ a {
     max-width: var(--desktop-max-width);
     margin: 0 auto;
 }
-table{
+
+table {
     border-collapse: collapse;
     width: 100%;
     color: var(--white-accent-color);
@@ -536,39 +543,41 @@ table{
     background: none;
 }
 
-thead tr{
+thead tr {
     background: none;
     border-bottom: 1px solid var(--table-border-color);
 }
-thead th{
+
+thead th {
     font-weight: 500;
     color: var(--table-text-color);
 }
 
 
 table th,
-table td{
+table td {
     font-size: 1rem;
     text-align: left;
     padding: 13px 40px;
     color: var(--table-text-color);
 }
 
-.log-history{
+.log-history {
     background: var(--table-header-color);
     padding: 15px 40px;
     border-bottom: 1px solid var(--table-border-color);
 }
 
-table td{
+table td {
     border-bottom: 1px solid var(--table-border-color);
-    
+
 }
 
 .pages {
     padding-top: 15px;
 }
-.pages a{
+
+.pages a {
     color: var(--table-text-color);
     text-decoration: none;
     font-size: 1rem;
@@ -576,7 +585,8 @@ table td{
     transition: 0.5s ease;
 
 }
-.pages a:hover{
+
+.pages a:hover {
     background: var(--dark-outline-color);
 }
 
@@ -587,8 +597,8 @@ table td{
 
 
 
-@media (max-width: 1000px){
-    .log-container{
+@media (max-width: 1000px) {
+    .log-container {
         padding-inline: 25px;
     }
 }
@@ -615,7 +625,7 @@ table td{
 
 @media (max-width: 530px) {
 
-    .log-container{
+    .log-container {
         padding-inline: 25px;
     }
 
@@ -658,22 +668,23 @@ table td{
     }
 }
 
-@media (max-width: 440px){
-    .responsive-display-none{
+@media (max-width: 440px) {
+    .responsive-display-none {
         display: none;
     }
-   
 
-    table td{
+
+    table td {
         text-align: right;
         display: block;
     }
-    table td::before{
+
+    table td::before {
         content: attr(data-title) ": ";
         float: left;
     }
 
-    .pages{
+    .pages {
         display: none;
     }
 }
