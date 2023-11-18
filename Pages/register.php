@@ -70,29 +70,29 @@
                     <h2>Create account</h2>
 
 
-                    <div class="form_each">
+                    <div class="form_each_reg">
                         <input type="text" name="name" id="name" placeholder="Name" required>
                         <input type="text" name="lname" id="lname" placeholder="Last name" required>
                     </div>
 
         
-                    <div class="form_each">
+                    <div class="form_each_reg">
                         
                         <input type="text" name="email" id="email" placeholder="Email" required>
                     </div>
 
 
-                    <div class="form_each">
+                    <div class="form_each_reg">
                         <input type="text" name="username" id="username" placeholder="Username" required>
                     </div>
 
 
-                  <div class="form_each">
+                  <div class="form_each_reg">
                       <input type="password" name="password" id="password" placeholder="Password" required>
                       <i class="fa-solid fa-eye-slash" id="show-password-1"></i>
                   </div>
 
-                    <div class="form_each">
+                    <div class="form_each_reg">
                         <input type="password" name="repassword" id="repassword" placeholder="Re-type password" required>
                         <i class="fa-solid fa-eye-slash" id="show-password-2"></i>
                     </div>

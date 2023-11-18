@@ -27,6 +27,9 @@ if (isset($_SESSION['UserID'])) {
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
+    <!-- Bootstrap -->
+ 
+
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Pages/style.css">
@@ -62,11 +65,16 @@ if (isset($_SESSION['UserID'])) {
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
                 <div class="settings">
-                    <li><a href="#"> <?php echo $_SESSION["username"] ?> Username</a>
+                    <li><span><?php echo $_SESSION["username"] ?> Username</span>
                         <ul class="dropdown">
-                            <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
+                            <!-- <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
                             <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
-                            <li class="option"><a href="Methods/logout.php">Log out</a></li>
+                            <li class="option"><a href="Methods/logout.php">Log out</a></li> -->
+
+                            <a href="../Pages/logpage.php" class="option">Logs</a>
+                            <a href="../Pages/change-pass.php" class="option">Settings</a>
+                            <a href="Methods/logout.php" class="option">Log out</a>
+                            <a href="#" class="option delete-account">Delete account</a>
                         </ul>
                     </li>
                 </div>

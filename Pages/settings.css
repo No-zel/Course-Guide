@@ -1,8 +1,9 @@
 .settings{
     display: none;
+    position: relative;
 }
 
-ul li {
+/* ul li {
     display: inline-block;
     position: relative;
     align-items: center;
@@ -11,7 +12,6 @@ ul li {
 ul li a {
     display: block;
     color: white;
-    width: 100%;
     transition: all 0.6s ease;
 }
 
@@ -20,17 +20,19 @@ ul li ul.dropdown {
     box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
     width: 38px;
     left: -7px;
-    display: flex;
-    flex-direction: row;
     background: var(--primary-background-color);
     border: 1px solid var(--dark-outline-color);
     ;
     padding: 10px 25px;
     position: absolute;
     z-index: 999;
-    display: none;
+    display: flex;
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.option li{
+    width: 100%;
 }
 
 ul li a:hover {
@@ -48,4 +50,99 @@ ul li:hover ul.dropdown {
 .option a {
     padding: 10px 15px;
     transform: translateX(-30px);
+} */
+
+
+
+span{
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 25px; */
+    min-height: 65px;
 }
+
+.settings li a{
+    display: block;
+    padding: 8px 20px;
+    width: 100%;
+    transition: all 0.3s ease;
+  
+  
+}
+
+ul li a:hover{
+    background: var(--dark-outline-color) ;
+    border-radius: 3px;
+   
+}
+ul li:hover ul.dropdown {
+    display: flex;
+
+}
+
+
+/* .dropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    width: 100px;
+    padding: 5px 15px;
+    flex-direction: column;
+    text-align: left;
+    gap: 0;
+    background: #1C1C1C;
+    outline: 1px solid #3A3A3A;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+} */
+
+.settings ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .settings li {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .settings li ul.dropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 100%;
+   
+    width: 150px; /* Adjust width as needed */
+    padding: 5px 15px;
+    flex-direction: column;
+    gap: 0;
+    background: #1C1C1C;
+    outline: 1px solid #3A3A3A;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1; /* Ensure dropdown is above other content */
+
+    
+  }
+
+
+
+.option a{
+    display: block;
+    padding: 0 15px;
+    
+}
+
+.delete-account {
+    color: #ca3535;
+}
+
+
+/* ========== */
+
+

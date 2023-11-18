@@ -328,6 +328,12 @@ li a {
 
 .form_each {
     display: flex;
+    gap: 15px;
+    position: relative;
+}
+
+.form_each_reg {
+    display: flex;
     flex-direction: column;
     gap: 15px;
     position: relative;
@@ -345,6 +351,28 @@ li a {
     outline: 1px solid var(--dark-outline-color);
 }
 
+
+/* Register Page Open eye password CSS ==================== */
+
+.form_each_reg .fa-eye-slash {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    color: var(--dark-outline-color);
+    cursor: pointer;
+
+}
+
+.form_each_reg .fa-eye {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    color: var(--dark-outline-color);
+    cursor: pointer;
+}
+
+
+/* Other page eye password CSS ==================== */
 
 .form_each .fa-eye-slash {
     position: absolute;
