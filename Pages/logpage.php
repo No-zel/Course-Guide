@@ -69,12 +69,17 @@ $totalPages = ceil(count($logData) / $maxpage);
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#"><?php  echo $_SESSION["username"]  ?> | Profile</a>
-                <ul class="dropdown">
-                    <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
-                    <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
-                    <li class="option"><a href="../Methods/logout.php">Log out</a></li>
-                </ul>
+                <div class="settings" style="display: flex;">
+                    <li><span><?php echo $_SESSION["username"] ?> Username</span>
+                        <ul class="dropdown">
+
+                            <a href="../Pages/logpage.php" class="option">Logs</a>
+                            <a href="../Pages/change-pass.php" class="option">Settings</a>
+                            <a href="Methods/logout.php" class="option">Log out</a>
+                            <a href="#" class="option delete-account">Delete account</a>
+                        </ul>
+                    </li>
+                </div>
             </li>
             </ul>
 

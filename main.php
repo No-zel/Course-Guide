@@ -89,7 +89,7 @@ if (isset($_SESSION['UserID'])) {
 
     <section class="hero-section">
         <div class="hero-title">
-            <h1>Discover Your Official
+            <h1 class="hero-h1">Discover Your Official
                 Course with CGuide AI</h1>
             <div class="form">
 
@@ -117,12 +117,16 @@ if (isset($_SESSION['UserID'])) {
     <script>
 
         let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2 } });
-
+        let tl2 = gsap.timeline({defaults: {duration: 2, delay:1}})
         let flagPoles = CSSRulePlugin.getRule(".hero-section:before");
 
         tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.2 })
         tl.to('.form', { 'clip-path': 'polygon(0% 105%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0 }, "-=2")
         tl.to('nav', { opacity: 1 }, "-=1")
+
+        tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.2 })
+
+        tl2.to(".hero-h1", {y:3, repeat:-1, yoyo:true})
     </script>
 </body>
 
