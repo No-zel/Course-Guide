@@ -106,6 +106,17 @@ if (isset($_SESSION['UserID'])) {
 
     </section>
 
+    <section class="about-section">
+
+        <div class="text-section"></div>
+        
+        <div class="card-box-container">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
         integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
@@ -126,7 +137,7 @@ if (isset($_SESSION['UserID'])) {
 
         tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.2 })
 
-        tl2.to(".hero-h1", {y:3, repeat:-1, yoyo:true})
+       // tl2.to(".hero-h1", {y:3, repeat:-1, yoyo:true})
     </script>
 </body>
 
