@@ -684,6 +684,11 @@ table td {
     .box-child{
         width: fit-content !important;
     }
+
+    .footer-wrapper{
+        display: flex;
+        flex-direction: column;
+      }
 }
 
 
