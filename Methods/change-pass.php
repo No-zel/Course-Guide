@@ -11,6 +11,9 @@ $memberID = $_SESSION['UserID'];
 $newPassword = $_POST['newPassword'] ?? "";
 $oldPassword = $_POST['oldPassword'] ?? "";
 
+$newFirstname = $_POST['fname'] ?? "";
+$newLastname = $_POST['lname'] ?? "";
+
 $hashed_password = password_hash($newPassword, PASSWORD_DEFAULT);
 
 if (isset($_SESSION["username"])) {
@@ -25,10 +28,10 @@ if (isset($_SESSION["username"])) {
        if ($oldPassword == $newPassword) {
 
         //SQL Update
-        $statement = "UPDATE Members SET PASSWORD ='$hashed_password' WHERE ID ='$memberID'";
+        $statement = "UPDATE Members SET FNAME ='$newFirstname', LNAME = '$newLastname', PASSWORD ='$hashed_password' WHERE ID ='$memberID'";
         $dbcon->exec($statement);
 
-        $_SESSION['StatusSuccess'] = "PasswordChanged";
+        $_SESSION['StatusSuccess'] = "Information Change, Please Login Again";
         header("location: ../Pages/login.php");
 
            } else {

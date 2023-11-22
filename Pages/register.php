@@ -71,7 +71,7 @@
 
 
                     <div class="form_each_reg">
-                        <input type="text" name="name" id="name" placeholder="Name" required>
+                        <input type="text" name="fname" id="fname" placeholder="Name" required>
                         <input type="text" name="lname" id="lname" placeholder="Last name" required>
                     </div>
 

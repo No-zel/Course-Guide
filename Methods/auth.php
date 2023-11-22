@@ -33,7 +33,7 @@ $dbpassword = "ilovecookies696969";
                 $dbcon->exec($Hlogs);
 
                 //Directory after the login
-                header("location: ../Pages/change-pass.php");
+                header("location: ../main.php");
 
             } else {
                 //Error Catcher

@@ -11,6 +11,8 @@ $dbpassword = "ilovecookies696969";
     $accemail = $_POST['email']  ?? "";
     $accpassword = $_POST['password']  ?? "";
     $accrepassword = $_POST['repassword']  ?? "";
+    $Fname = $_POST['fname']  ?? "";
+    $Lname = $_POST['lname']  ?? "";
     
 
     //Hashing the password for protection
@@ -43,7 +45,7 @@ $dbpassword = "ilovecookies696969";
           } else {
 
                       //if theres not the user will be added
-          $sql = "INSERT INTO Members (`TYPEOFUSER`, `USERNAME`, `EMAIL`, `PASSWORD`) VALUES ('2', '$accusername', '$accemail', '$hashed_password')";
+          $sql = "INSERT INTO Members (`TYPEOFUSER`, `FNAME`, `LNAME`,`USERNAME`, `EMAIL`, `PASSWORD`) VALUES ('2', '$Fname', '$Lname', '$accusername', '$accemail', '$hashed_password')";
           $dbcon->exec($sql);
 
           $_SESSION['StatusSuccess'] = "Account Registered";
