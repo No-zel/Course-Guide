@@ -82,9 +82,6 @@ echo $Analytical;
 echo $Practical;
 echo $Enterprising; 
 
-$array($Creative,$Organized,$Social, $Analytical, $Practical, $Enterprising);
 
-$key = array_search(max($array), $array);
-echo $key;
 
 ?>
