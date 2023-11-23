@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +11,7 @@
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- 
+
 
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,94 +23,98 @@
 </head>
 
 <style>
+    .desktop-section {
+        max-width: var(--desktop-max-width);
+        padding: var(--section-padding);
+        min-height: 40vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        gap: 15px;
+    }
 
-   .desktop-section{
-    max-width: var(--desktop-max-width);
-    padding: var(--section-padding);
-    min-height: 40vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: auto;
-    gap:15px ;
-   }
-   .text-section{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-   }
-   .blue-title{
-    color: var(--btnlogin-background-color);
-    letter-spacing: 10px;
-    font-size: var(--blue-text-size);
-    margin: 5px 0;
-   }
-   .primary-title{
-    margin: 0;
-    width: fit-content;
-    font-size: var(--primary-title-size);
-    color: var(--white-accent-color);
-   }
+    .text-section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 
-   .secondary-p{
-    color: var(--white-accent-color);
-    font-size: var(--p-text-size);
-    width: fit-content; 
-    overflow-wrap: break-word; 
-   }
+    .blue-title {
+        color: var(--btnlogin-background-color);
+        letter-spacing: 10px;
+        font-size: var(--blue-text-size);
+        margin: 5px 0;
+    }
 
-   .card-box-container{
-    display: flex;
-    gap: 15px;
-    box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
-    background: rgb(217, 217, 217);
-    background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 12px;
-    color: var(--white-accent-color);
-    outline: 1px solid var(--dark-outline-color);
-    padding: 25px;
-   
-   }
+    .primary-title {
+        margin: 0;
+        width: fit-content;
+        font-size: var(--primary-title-size);
+        color: var(--white-accent-color);
+    }
 
-   .box-paragraph{
-    font-size: var(--p-text-size);
-    line-height: 1.8;
+    .secondary-p {
+        color: var(--white-accent-color);
+        font-size: var(--p-text-size);
+        width: fit-content;
+        overflow-wrap: break-word;
+    }
 
-   }
+    .card-box-container {
+        display: flex;
+        gap: 15px;
+        box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+        background: rgb(217, 217, 217);
+        background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        border-radius: 12px;
+        color: var(--white-accent-color);
+        outline: 1px solid var(--dark-outline-color);
+        padding: 25px;
+
+    }
+
+    .box-paragraph {
+        font-size: var(--p-text-size);
+        line-height: 1.8;
+
+    }
 
 
-   .cta-section{
-    max-width: var(--desktop-max-width);
-    min-height: 30vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    gap:15px ;
-    border-radius: 12px;
-    padding: 25px 25px 65px 25px;
-   }
+    .cta-section {
+        max-width: var(--desktop-max-width);
+        min-height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        gap: 15px;
+        border-radius: 12px;
+        padding: 25px 25px 65px 25px;
+    }
 
-   .cta-card{
-    position: relative;
-   }
-   .cta-card img{
-    max-width: 100%;
-    height: auto;
-    transition: all 0.5s ease;
-   }
+    .cta-card {
+        position: relative;
+    }
 
-   .cta-position{
-    position: absolute;
-    top: 45%;
-    right: 225px;
-   }
-   
-   .cta-buttons{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-   }
+    .cta-card img {
+        max-width: 100%;
+        height: auto;
+        transition: all 0.5s ease;
+    }
+
+    .cta-position {
+        position: absolute;
+        top: 45%;
+        right: 225px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
     .get-started {
         font-size: var(--p-text-size);
         background: var(--btnlogin-background-color);
@@ -123,7 +125,7 @@
         transition: all 0.3s ease;
     }
 
-    .sign-up{
+    .sign-up {
         font-size: var(--p-text-size);
         background: none;
         color: var(--btnlogin-background-color);
@@ -134,77 +136,81 @@
         transition: all 0.3s ease;
 
     }
-    .get-started:hover{
+
+    .get-started:hover {
         background: #277dff;
     }
 
-    .sign-up:hover{
+    .sign-up:hover {
         background: var(--dark-outline-color);
 
     }
 
 
-    .feature-box{
+    .feature-box {
         display: flex;
         gap: 25px;
         margin-bottom: 75px;
 
     }
 
-    .box-child{
-    width: 100%;
-    box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
-    background: rgb(217, 217, 217);
-    background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 12px;
-    color: var(--white-accent-color);
-    outline: 1px solid var(--dark-outline-color);
-    padding: 25px;
+    .box-child {
+        width: 100%;
+        box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+        background: rgb(217, 217, 217);
+        background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        border-radius: 12px;
+        color: var(--white-accent-color);
+        outline: 1px solid var(--dark-outline-color);
+        padding: 25px;
     }
 
-    .box-child h3{
+    .box-child h3 {
         font-size: var(--blue-text-size);
     }
 
 
-    .footer-container{
+    .footer-container {
         min-height: 20vh;
         background: var(--table-header-color);
-      }
+    }
 
-      .footer-wrapper{
+    .footer-wrapper {
         border-radius: 25px 25px 0 0;
         max-width: var(--desktop-max-width);
         display: flex;
         justify-content: center;
-      
+
         margin: 0 auto;
         padding: 30px;
         min-height: 200px;
-       gap: 25px;
-    
+        gap: 25px;
 
-      }
-      .footer-wrapper h1{
+
+    }
+
+    .footer-wrapper h1 {
         font-size: 15px;
         color: var(--white-accent-color);
-      }
-      .footer-wrapper a{
+    }
+
+    .footer-wrapper a {
         text-decoration: none;
         color: var(--white-accent-color);
         font-size: 10px;
-      }
-  
-      .footer-wrapper p{
+    }
+
+    .footer-wrapper p {
         color: var(--white-accent-color);
         font-size: var(--p-text-size);
-       
-      }
-      .footer-first a{
+
+    }
+
+    .footer-first a {
         font-size: 15px;
-      }
-  
-      .footer-first{
+    }
+
+    .footer-first {
         display: flex;
         flex-direction: column;
         flex-basis: 50%;
@@ -212,69 +218,81 @@
         gap: 10px;
 
 
-      }
-      .footer-first p{
+    }
+
+    .footer-first p {
         line-height: 1.9;
         color: var(--table-text-color);
-   
-      }
-    
-      .footer-second{
+
+    }
+
+    .footer-second {
         display: flex;
         flex-direction: column;
         flex-basis: 15%;
         gap: 10px;
         font-weight: 200;
-       
-      }
-       .footer-second a, .footer-third a, .footer-fourth a, .footer-fifth a{
+
+    }
+
+    .footer-second a,
+    .footer-third a,
+    .footer-fourth a,
+    .footer-fifth a {
         font-weight: 400;
         color: var(--table-text-color);
         text-decoration: none;
-      }
-      .footer-second a:hover, .footer-third a:hover, .footer-fourth a:hover, .footer-fifth a:hover{
+    }
+
+    .footer-second a:hover,
+    .footer-third a:hover,
+    .footer-fourth a:hover,
+    .footer-fifth a:hover {
         text-decoration: underline;
-      }
-      .footer-third{
+    }
+
+    .footer-third {
         display: flex;
         flex-direction: column;
         flex-basis: 15%;
         gap: 10px;
-      }
-      .footer-fourth{
+    }
+
+    .footer-fourth {
         display: flex;
         flex-direction: column;
         flex-basis: 10%;
         gap: 10px;
-      }
-      .footer-fifth{
+    }
+
+    .footer-fifth {
         display: flex;
         flex-direction: column;
         flex-basis: 10%;
         gap: 10px;
-      }
-      
-      .copyright{
-        border-top: 1px solid  var(--dark-outline-color);
+    }
+
+    .copyright {
+        border-top: 1px solid var(--dark-outline-color);
         margin: 0 auto;
-       
+
         text-align: center;
         color: var(--table-text-color);
 
         padding-top: 20px;
-        font-size:10px;
+        font-size: 10px;
         height: 50px;
-      }
+    }
 
-    @media (max-width: 950px){
+    @media (max-width: 950px) {
 
-        .cta-card img{
+        .cta-card img {
             display: none;
         }
 
-        .cta-section{
+        .cta-section {
             max-width: var(--desktop-max-width);
-            padding-inline: 15px ;
+            padding-inline: 15px;
             box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
             background: rgb(217, 217, 217);
             background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
@@ -283,27 +301,23 @@
             outline: 1px solid var(--dark-outline-color);
             min-height: 25vh;
             margin: var(--section-margin);
-         
+
         }
 
-     
+
         .cta-position {
-            
+
             position: relative;
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           align-items: center;
-          margin: auto;
-          top: 0;
-          right: 0;
-          text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            top: 0;
+            right: 0;
+            text-align: center;
         }
     }
-
-
-   
-
 </style>
 
 <body>
@@ -364,53 +378,55 @@
 
     </section>
 
-    <section class="desktop-section" data-aos="fade-up"
-    data-aos-anchor-placement="center-center">
+    <section class="desktop-section" data-aos="fade-up" data-aos-anchor-placement="center-center">
 
         <div class="text-section">
             <h3 class="blue-title">ABOUT</h3>
             <h1 class="primary-title">GET TO KNOW US</h1>
-            <p class="secondary-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt quia perferendis adipisci at, nihil veniam!</p>
+            <p class="secondary-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt quia perferendis
+                adipisci at, nihil veniam!</p>
         </div>
-        
+
         <div class="card-box-container">
             <div class="box">
                 <p class="box-paragraph">
-                    Those who are struggling to choose a college program that fits their skills can get assistance from CGuide AI. The website asks questions and then utilizes artificial intelligence (AI) to assess the responses in order to recommend a course of study. With CGuide AI, students can set up their own accounts to safeguard their personal information.
+                    Those who are struggling to choose a college program that fits their skills can get assistance from
+                    CGuide AI. The website asks questions and then utilizes artificial intelligence (AI) to assess the
+                    responses in order to recommend a course of study. With CGuide AI, students can set up their own
+                    accounts to safeguard their personal information.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" data-aos="fade-up"
-    data-aos-anchor-placement="center-center">
+    <section class="cta-section" data-aos="fade-up" data-aos-anchor-placement="center-center">
         <div class="cta-card">
-                <img src="../assets/banner.png" alt="">
-                <div class="text-section cta-position">
-                    <h1 class="primary-title">Choose your course now</h1>
-                    <p class="secondary-p">Lorem ipsum, dolor sit amet consectetur!</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="get-started">Get started</a>
-                        <a href="#" class="sign-up">Sign up</a>
-                    </div>
-            
+            <img src="../assets/banner.png" alt="">
+            <div class="text-section cta-position">
+                <h1 class="primary-title">Choose your course now</h1>
+                <p class="secondary-p">Lorem ipsum, dolor sit amet consectetur!</p>
+                <div class="cta-buttons">
+                    <a href="#" class="get-started">Get started</a>
+                    <a href="#" class="sign-up">Sign up</a>
+                </div>
+
 
             </div>
 
-           
-            
+
+
         </div>
     </section>
 
-    <section class="desktop-section" data-aos="fade-up"
-    data-aos-anchor-placement="center-center">
+    <section class="desktop-section" data-aos="fade-up" data-aos-anchor-placement="center-center">
 
         <div class="text-section">
             <h3 class="blue-title">FEATURES</h3>
             <h1 class="primary-title">EXCEEDING EXPECTATIONS</h1>
-            <p class="secondary-p">Not your average site. We're all about your studies, guiding you to your dream course!</p>
+            <p class="secondary-p">Not your average site. We're all about your studies, guiding you to your dream
+                course!</p>
         </div>
-        
+
         <div class="feature-box">
             <div class="box-child">
                 <img src="../assets/Question answer.svg" alt="question-image">
@@ -424,7 +440,8 @@
                 <img src="../assets/Search in List.svg" alt="question-image">
                 <h3>Course Listings</h3>
                 <p class="box-paragraph">
-                    Detailed information about various courses offered, including descriptions, prerequisites, credits, and schedules.
+                    Detailed information about various courses offered, including descriptions, prerequisites, credits,
+                    and schedules.
                 </p>
             </div>
 
@@ -432,46 +449,47 @@
                 <img src="../assets/Heart.svg" alt="question-image">
                 <h3>CGuide Recommendations</h3>
                 <p class="box-paragraph">
-                    Algorithms or tools that suggest courses based on a user's academic history, interests, or career goals.
+                    Algorithms or tools that suggest courses based on a user's academic history, interests, or career
+                    goals.
                 </p>
             </div>
         </div>
     </section>
 
 
-    <footer class="footer-container" >
+    <footer class="footer-container">
         <div class="footer-wrapper">
             <div class="footer-first">
-              <a href="#">CGUIDE</a>
-              <p>The easiest way to determine the most fitting courses for you. </p>
+                <a href="#">CGUIDE</a>
+                <p>The easiest way to determine the most fitting courses for you. </p>
             </div>
             <div class="footer-second">
-              <h1>Navigation</h1>
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Features</a>
-              <a href="#">Process</a>
+                <h1>Navigation</h1>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Features</a>
+                <a href="#">Process</a>
             </div>
-          
+
             <div class="footer-third">
-              <h1>Terms of Use</h1>
-              <a href="#" target="_blank">Services</a>
+                <h1>Terms of Use</h1>
+                <a href="#" target="_blank">Services</a>
             </div>
-          
+
             <div class="footer-fourth">
-              <h1>Policy</h1>
-              <a href="#" target="_blank">Text here</a>
-  
+                <h1>Policy</h1>
+                <a href="#" target="_blank">Text here</a>
+
             </div>
 
             <div class="footer-fifth">
                 <h1>Community</h1>
                 <a href="#" target="_blank">Discord</a>
-    
-              </div>
+
+            </div>
         </div>
-          <div class="copyright">© CGuide AI 2023</div>
-        </footer>
+        <div class="copyright">© CGuide AI 2023</div>
+    </footer>
 
 
 
@@ -492,7 +510,7 @@
         AOS.init();
 
         let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2 } });
-        let tl2 = gsap.timeline({defaults: {duration: 2, delay:1}})
+        let tl2 = gsap.timeline({ defaults: { duration: 2, delay: 1 } })
         let flagPoles = CSSRulePlugin.getRule(".hero-section:before");
 
         tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.2 })
@@ -501,22 +519,22 @@
 
         tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', opacity: 1, y: 0, duration: 2.2 })
 
-       // tl2.to(".hero-h1", {y:3, repeat:-1, yoyo:true})
+        // tl2.to(".hero-h1", {y:3, repeat:-1, yoyo:true})
 
 
-       // Smooth Scroll 
-       const lenis = new Lenis()
+        // Smooth Scroll 
+        const lenis = new Lenis()
 
-       lenis.on('scroll', (e) => {
-       console.log(e)
-       })
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        })
 
-       function raf(time) {
-       lenis.raf(time)
-       requestAnimationFrame(raf)
-       }
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
 
-       requestAnimationFrame(raf)
+        requestAnimationFrame(raf)
 
     </script>
 </body>

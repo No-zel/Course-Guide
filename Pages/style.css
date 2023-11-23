@@ -26,17 +26,16 @@
     --section-margin: 25px;
 }
 
-::-webkit-scrollbar
-{
-width: 12px;
-height: 5px;
+::-webkit-scrollbar {
+    width: 12px;
+    height: 5px;
 }
 
-::-webkit-scrollbar-thumb{
-background: var(--dark-outline-color);
-border-radius: 6px
-
+::-webkit-scrollbar-thumb {
+    background: var(--dark-outline-color);
+    border-radius: 6px
 }
+
 body {
     padding: 0;
     margin: 0;
@@ -418,6 +417,14 @@ li a {
 
 }
 
+#AdminSet {
+    display: none;
+}
+
+#AdminLog {
+    display: none;
+}
+
 .options a {
     text-decoration: none;
     color: var(--white-accent-color);
@@ -428,6 +435,7 @@ li a {
     color: var(--white-accent-color);
     text-decoration: underline;
 }
+
 
 
 
@@ -471,7 +479,7 @@ input[type="text"]:focus {
     flex-direction: column;
     gap: 15px;
     padding: 0 25px;
-   
+
 }
 
 
@@ -677,18 +685,20 @@ table td {
     .title-wrapper {
         display: none;
     }
+
     .feature-box {
         display: flex;
         flex-direction: column;
     }
-    .box-child{
+
+    .box-child {
         width: fit-content !important;
     }
 
-    .footer-wrapper{
+    .footer-wrapper {
         display: flex;
         flex-direction: column;
-      }
+    }
 }
 
 
@@ -698,7 +708,7 @@ table td {
 
 
 @media (max-width: 530px) {
-    .login-card{
+    .login-card {
         padding-inline: 25px;
     }
 
@@ -744,7 +754,7 @@ table td {
         font-size: 15px;
     }
 
-    
+
 }
 
 @media (max-width: 440px) {
@@ -752,8 +762,8 @@ table td {
         display: none;
     }
 
- 
- 
+
+
 
     table td {
         text-align: right;

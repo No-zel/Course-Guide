@@ -1,4 +1,4 @@
-.settings{
+.settings {
     display: none;
     position: relative;
 }
@@ -54,7 +54,7 @@ ul li:hover ul.dropdown {
 
 
 
-span{
+span {
     font-size: 12px;
     cursor: pointer;
     display: flex;
@@ -64,20 +64,21 @@ span{
     min-height: 65px;
 }
 
-.settings li a{
+.settings li a {
     display: block;
     padding: 8px 20px;
     width: 100%;
     transition: all 0.3s ease;
-  
-  
+
+
 }
 
-ul li a:hover{
-    background: var(--dark-outline-color) ;
+ul li a:hover {
+    background: var(--dark-outline-color);
     border-radius: 3px;
-   
+
 }
+
 ul li:hover ul.dropdown {
     display: flex;
 
@@ -104,20 +105,21 @@ ul li:hover ul.dropdown {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .settings li {
+}
+
+.settings li {
     position: relative;
     display: inline-block;
-  }
-  
-  .settings li ul.dropdown {
+}
+
+.settings li ul.dropdown {
     position: absolute;
-    display: none;
+    display: flex;
     right: 0;
     top: 100%;
-   
-    width: 150px; /* Adjust width as needed */
+
+    width: 150px;
+    /* Adjust width as needed */
     padding: 5px 15px;
     flex-direction: column;
     gap: 0;
@@ -125,17 +127,18 @@ ul li:hover ul.dropdown {
     outline: 1px solid #3A3A3A;
     border-radius: 8px;
     overflow: hidden;
-    z-index: 1; /* Ensure dropdown is above other content */
-
-    
-  }
+    z-index: 1;
+    /* Ensure dropdown is above other content */
 
 
+}
 
-.option a{
+
+
+.option a {
     display: block;
     padding: 0 15px;
-    
+
 }
 
 .delete-account {
@@ -144,5 +147,3 @@ ul li:hover ul.dropdown {
 
 
 /* ========== */
-
-

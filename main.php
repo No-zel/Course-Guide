@@ -13,7 +13,24 @@ if (isset($_SESSION['UserID'])) {
     }
 
     </style>';
+
+    if ($_SESSION["TYPE"] == 1) {
+        echo '<style> 
+    
+        #AdminSet {
+            display: block !important;
+        }
+
+        #AdminLog {
+            display: block !important;
+        }
+
+        </style>';
+    }    
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +88,8 @@ if (isset($_SESSION['UserID'])) {
                             <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
                             <li class="option"><a href="Methods/logout.php">Log out</a></li> -->
 
-                            <a href="Pages/logpage.php" class="option"> Admin Logs</a>
+                            <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
+                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
                             <a href="Pages/change-pass.php" class="option">Settings</a>
                             <a href="Methods/logout.php" class="option">Log out</a>
                             <a href="Methods/delete-acc.php" class="option delete-account">Delete account</a>
