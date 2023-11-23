@@ -27,6 +27,7 @@ $dbpassword = "ilovecookies696969";
                 $_SESSION["LName"] = $checkusers['LNAME'];
                 $_SESSION["FName"] = $checkusers['FNAME'];
                 $_SESSION["TYPE"] = $checkusers['TYPEOFUSER'];
+                session_regenerate_id(true);
 
                 //lOGIN LOGS
                 $loginuser = $checkusers['USERNAME'];
