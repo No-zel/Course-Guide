@@ -71,8 +71,8 @@ if (!$_SESSION['UserID']) {
                 <div class="top-section">
 
                     <div class="title-info">
-                        <h3 class="user-account"><?php echo $_SESSION["username"] ?> · CGuide</h3>
-                        <h2 class="system-header"><span>System</span> | Change password</h2>
+                        <h3 class="user-account"><?php echo $_SESSION["LName"];?>, <?php echo $_SESSION["FName"];  ?>   ·  CGuide</h3>
+                        <h2 class="system-header">User Setting</h2>
                        
                     </div>
 
