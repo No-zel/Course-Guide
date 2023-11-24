@@ -5,6 +5,8 @@
     --card-background: rgb(217, 217, 217);
     --white-accent-color: #ffff;
     --cardgradient-background: linear-gradient(151deg, rgba(217, 217, 217, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    --input-background: linear-gradient(-250deg, rgba(134, 134, 134, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    --input-text-color: #979797;
     --btnlogin-background-color: #1163DD;
     --dark-outline-color: #3A3A3A;
     --table-header-color: #0F1114;
@@ -20,7 +22,7 @@
     --blue-text-size: 0.9375rem;
     --primary-title-size: 1.875rem;
     --p-text-size: 0.9375rem;
-
+    --title-question-size: 1.5625rem;
 
     --section-padding: 25px;
     --section-margin: 25px;
