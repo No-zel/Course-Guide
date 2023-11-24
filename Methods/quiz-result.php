@@ -82,6 +82,26 @@ echo $Analytical;
 echo $Practical;
 echo $Enterprising; 
 
+$categories = array(
+    array('name' => 'Creative', 'value' => $Creative),
+    array('name' => 'Organized', 'value' => $Organized),
+    array('name' => 'Social', 'value' => $Social),
+    array('name' => 'Analytical', 'value' => $Analytical),
+    array('name' => 'Practical', 'value' => $Practical),
+    array('name' => 'Enterprising', 'value' => $Enterprising)
+);
+
+//SORT THE ARRAYS
+usort($categories, function ($a, $b) {
+    return $b['value'] - $a['value'];
+});
+// PRINT THE SORTED ARRAY
+foreach ($categories as $category) {
+    echo $category['name'] . ': ' . $category['value'] . '<br>';
+}
+// CALL THE ARRAY BY INDEX
+echo $categories[0]['name'] . ': ' . $categories[0]['value'] . '<br>';
+
 
 
 ?>

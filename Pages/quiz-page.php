@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+//Checker if someones is by-passing the website (not login)
+if (!isset($_SESSION['UserID'])) {
+    $_SESSION['StatusError'] = "You need to login first";
+    header('location: login.php');
+} 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -305,13 +317,13 @@
             
           
         </div>
-       <div class="button-div">
-         <button id="backButton" class="back">Back</button>
-         <button id="nextButton" class="next">Next</button>
-       </div>
 
     </div>
     </form>
+    <div class="button-div">
+         <button id="backButton" class="back">Back</button>
+         <button id="nextButton" class="next">Next</button>
+       </div>
 </body>
 
 

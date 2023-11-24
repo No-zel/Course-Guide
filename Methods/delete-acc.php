@@ -21,6 +21,9 @@ $memberID = $_SESSION['UserID'];
         $dbcon->exec($statement);
 
         $_SESSION['StatusSuccess'] = "Account Deleted";
+
+        session_unset();
+        session_destroy();
         header("location: ../Pages/login.php");
 
         } catch(PDOException $e) {

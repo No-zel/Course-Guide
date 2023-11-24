@@ -32,6 +32,8 @@ if (isset($_SESSION["username"])) {
         $dbcon->exec($statement);
 
         $_SESSION['StatusSuccess'] = "Information Change, Please Login Again";
+        session_unset();
+        session_destroy();
         header("location: ../Pages/login.php");
 
            } else {

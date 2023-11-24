@@ -89,8 +89,8 @@ if (isset($_SESSION['UserID'])) {
 
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#homeFeatures">Feature</a></li>
+                <li><a href="#homeAbout">About</a></li>
                 <div class="settings">
                     <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
                         <ul class="dropdown">
@@ -130,7 +130,7 @@ if (isset($_SESSION['UserID'])) {
 
     </section>
 
-    <section class="desktop-section animate-section">
+    <section id="homeAbout" class="desktop-section animate-section">
 
             <div class="text-section">
                 <h3 class="blue-title">ABOUT</h3>
@@ -170,7 +170,7 @@ if (isset($_SESSION['UserID'])) {
         </div>
     </section>
 
-    <section class="desktop-section animate-section">
+    <section id="homeFeatures" class="desktop-section animate-section">
 
             <div class="text-section">
                 <h3 class="blue-title">FEATURES</h3>
