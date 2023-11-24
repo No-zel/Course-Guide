@@ -239,7 +239,8 @@ li a {
 }
 
 .hero-title p {
-    color: white;
+    color: var(--white-accent-color);
+    font-size: var(--blue-text-size);
     text-align: center;
     transition: all 0.3s ease;
 
@@ -273,6 +274,93 @@ li a {
 .start button:hover {
     scale: 1.1;
 }
+
+
+
+
+
+
+/* Delete Account CSS Properties =============================================== */
+
+.open-confirmation{
+    z-index: 9999;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+}
+.card-delete{
+    background: var(--primary-background-color);
+    border: 1px solid var(--dark-outline-color);
+    color: var(--white-accent-color);
+    width: 350px;
+    height: 150px;
+    padding: 25px 25px 0 25px;
+    border-radius: 12px;
+}
+.card-h1{
+    border-bottom: 1px solid var(--dark-outline-color);
+    padding: 0 0 15px 0;
+    font-size: var(--p-text-size);
+}
+
+.card-content{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card-p{
+    font-size: var(--blue-text-size);
+}
+.card-button{
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.cancel{
+    border: 1px solid var(--dark-outline-color);
+    background: none;
+    padding: 10px 20px;
+    color: var(--white-accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.cancel:hover{
+    background: var(--table-header-color);
+}
+.delete{
+    background: rgb(185, 28, 28);
+    border: none;
+    padding: 10px 20px;
+    color: var(--white-accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.delete:hover{
+    background: rgb(128, 10, 10);
+
+
+}
+
+.show{
+    display: flex;
+}
+
+
+
+
+
+
+
 
 
 
@@ -571,6 +659,296 @@ a {
 
 
 
+/* Home page CSS Properties ==================================================================== */
+
+
+/** Animation classes of Sections
+------------------------ */
+.animate-section {
+    opacity: 0;
+    transition: opacity 0.8s ease; /* Adjust the duration and timing function as needed */
+  }
+  
+  .animate-section.animate {
+    opacity: 1;
+  }
+
+
+
+.desktop-section {
+    max-width: var(--desktop-max-width);
+    padding: var(--section-padding);
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 15px;
+}
+
+.text-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.blue-title {
+    color: var(--btnlogin-background-color);
+    letter-spacing: 10px;
+    font-size: var(--blue-text-size);
+    margin: 5px 0;
+}
+
+.primary-title {
+    margin: 0;
+    width: fit-content;
+    font-size: var(--primary-title-size);
+    color: var(--white-accent-color);
+}
+
+.secondary-p {
+    color: var(--white-accent-color);
+    font-size: var(--p-text-size);
+    width: fit-content;
+    overflow-wrap: break-word;
+}
+
+.card-box-container {
+    display: flex;
+    gap: 15px;
+    box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+    background: rgb(217, 217, 217);
+    background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 12px;
+    color: var(--white-accent-color);
+    outline: 1px solid var(--dark-outline-color);
+    padding: 25px;
+
+}
+
+.box-paragraph {
+    font-size: var(--p-text-size);
+    line-height: 1.8;
+
+}
+
+
+.cta-section {
+    max-width: var(--desktop-max-width);
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 15px;
+    border-radius: 12px;
+    padding: 25px 25px 65px 25px;
+}
+
+.cta-card {
+    position: relative;
+}
+
+.cta-card img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.cta-position {
+    position: absolute;
+    top: 45%;
+    right: 225px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.get-started {
+    font-size: var(--p-text-size);
+    background: var(--btnlogin-background-color);
+    color: var(--white-accent-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.sign-up {
+    font-size: var(--p-text-size);
+    background: none;
+    color: var(--btnlogin-background-color);
+    outline: 1px solid var(--btnlogin-background-color);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+
+}
+
+.get-started:hover {
+    background: #277dff;
+}
+
+.sign-up:hover {
+    background: var(--dark-outline-color);
+
+}
+
+
+.feature-box {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 75px;
+
+}
+
+.box-child {
+    width: 100%;
+    box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+    background: rgb(217, 217, 217);
+    background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 12px;
+    color: var(--white-accent-color);
+    outline: 1px solid var(--dark-outline-color);
+    padding: 25px;
+}
+
+.box-child h3 {
+    font-size: var(--blue-text-size);
+}
+
+
+.footer-container {
+    min-height: 20vh;
+    background: var(--table-header-color);
+}
+
+.footer-wrapper {
+    border-radius: 25px 25px 0 0;
+    max-width: var(--desktop-max-width);
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 30px;
+    min-height: 200px;
+    gap: 25px;
+
+
+}
+
+.footer-wrapper h1 {
+    font-size: 15px;
+    color: var(--white-accent-color);
+}
+
+.footer-wrapper a {
+    text-decoration: none;
+    color: var(--white-accent-color);
+    font-size: 10px;
+}
+
+.footer-wrapper p {
+    color: var(--white-accent-color);
+    font-size: var(--p-text-size);
+
+}
+
+.footer-first a {
+    font-size: 15px;
+}
+
+.footer-first {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding-right: 45px;
+    gap: 10px;
+
+
+}
+
+.footer-first p {
+    line-height: 1.9;
+    color: var(--table-text-color);
+
+}
+
+.footer-second {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 15%;
+    gap: 10px;
+    font-weight: 200;
+
+}
+
+.footer-second a,
+.footer-third a,
+.footer-fourth a,
+.footer-fifth a {
+    font-weight: 400;
+    color: var(--table-text-color);
+    text-decoration: none;
+}
+
+.footer-second a:hover,
+.footer-third a:hover,
+.footer-fourth a:hover,
+.footer-fifth a:hover {
+    text-decoration: underline;
+}
+
+.footer-third {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 15%;
+    gap: 10px;
+}
+
+.footer-fourth {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10%;
+    gap: 10px;
+}
+
+.footer-fifth {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10%;
+    gap: 10px;
+}
+
+.copyright {
+    border-top: 1px solid var(--dark-outline-color);
+    margin: 0 auto;
+
+    text-align: center;
+    color: var(--table-text-color);
+
+    padding-top: 20px;
+    font-size: 10px;
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Logs CSS Properties ====================================================================== */
 .header-title {
     display: flex;
@@ -667,6 +1045,40 @@ table td {
 
 
 
+@media (max-width: 950px) {
+
+    .cta-card img {
+        display: none;
+    }
+
+    .cta-section {
+        max-width: var(--desktop-max-width);
+        padding-inline: 15px;
+        box-shadow: 0rem 0.9375rem 1.875rem rgba(29, 29, 29, 0.4);
+        background: rgb(217, 217, 217);
+        background: linear-gradient(151deg, rgba(217, 217, 217, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+        border-radius: 12px;
+        color: var(--white-accent-color);
+        outline: 1px solid var(--dark-outline-color);
+        min-height: 25vh;
+        margin: var(--section-margin);
+
+    }
+
+
+    .cta-position {
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        top: 0;
+        right: 0;
+        text-align: center;
+    }
+}
 
 
 
@@ -754,6 +1166,9 @@ table td {
         font-size: 15px;
     }
 
+    .card-delete{
+        margin: 25px;
+    }
 
 }
 

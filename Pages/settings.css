@@ -85,22 +85,6 @@ ul li:hover ul.dropdown {
 }
 
 
-/* .dropdown{
-    position: absolute;
-    display: none;
-    right: 0;
-    width: 100px;
-    padding: 5px 15px;
-    flex-direction: column;
-    text-align: left;
-    gap: 0;
-    background: #1C1C1C;
-    outline: 1px solid #3A3A3A;
-    margin-top: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-} */
-
 .settings ul {
     list-style: none;
     margin: 0;
@@ -114,7 +98,7 @@ ul li:hover ul.dropdown {
 
 .settings li ul.dropdown {
     position: absolute;
-    display: flex;
+    display: none;
     right: 0;
     top: 100%;
 
@@ -129,7 +113,6 @@ ul li:hover ul.dropdown {
     overflow: hidden;
     z-index: 1;
     /* Ensure dropdown is above other content */
-
 
 }
 
