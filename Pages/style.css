@@ -27,12 +27,14 @@
     --section-padding: 25px;
     --section-margin: 25px;
 }
-html{
+
+html {
     scroll-behavior: smooth;
-    scroll-padding-top: 20rem ;
+    scroll-padding-top: 20rem;
 
 
-    }
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     height: 5px;
@@ -275,7 +277,8 @@ li a {
     outline: 1px solid var(--dark-outline-color);
     transition: all 0.3s ease;
 }
-.start a{
+
+.start a {
     text-decoration: none;
     font-size: var(--p-text-size);
     color: var(--white-accent-color);
@@ -292,7 +295,7 @@ li a {
 
 /* Delete Account CSS Properties =============================================== */
 
-.open-confirmation{
+.open-confirmation {
     z-index: 9999;
     position: absolute;
     display: none;
@@ -302,7 +305,8 @@ li a {
     width: 100vw;
     backdrop-filter: blur(10px);
 }
-.card-delete{
+
+.card-delete {
     background: var(--primary-background-color);
     border: 1px solid var(--dark-outline-color);
     color: var(--white-accent-color);
@@ -311,28 +315,31 @@ li a {
     padding: 25px 25px 0 25px;
     border-radius: 12px;
 }
-.card-h1{
+
+.card-h1 {
     border-bottom: 1px solid var(--dark-outline-color);
     padding: 0 0 15px 0;
     font-size: var(--p-text-size);
 }
 
-.card-content{
+.card-content {
     padding-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.card-p{
+
+.card-p {
     font-size: var(--blue-text-size);
 }
-.card-button{
+
+.card-button {
     display: flex;
     justify-content: right;
     gap: 10px;
 }
 
-.cancel{
+.cancel {
     border: 1px solid var(--dark-outline-color);
     background: none;
     padding: 10px 20px;
@@ -341,10 +348,12 @@ li a {
     cursor: pointer;
     transition: all 0.5s ease;
 }
-.cancel:hover{
+
+.cancel:hover {
     background: var(--table-header-color);
 }
-.delete{
+
+.delete {
     background: rgb(185, 28, 28);
     border: none;
     padding: 10px 20px;
@@ -355,13 +364,13 @@ li a {
 
 }
 
-.delete:hover{
+.delete:hover {
     background: rgb(128, 10, 10);
 
 
 }
 
-.show{
+.show {
     display: flex;
 }
 
@@ -619,8 +628,9 @@ input[type="text"]:focus {
 
 .bot-section span,
 a {
+    color: var(--white-accent-color);
     font-size: 12px;
-
+    text-decoration: none;
 }
 
 .bot-section a {
@@ -676,12 +686,13 @@ a {
 ------------------------ */
 .animate-section {
     opacity: 0;
-    transition: opacity 0.8s ease; /* Adjust the duration and timing function as needed */
-  }
-  
-  .animate-section.animate {
+    transition: opacity 0.8s ease;
+    /* Adjust the duration and timing function as needed */
+}
+
+.animate-section.animate {
     opacity: 1;
-  }
+}
 
 
 
@@ -1176,7 +1187,7 @@ table td {
         font-size: 15px;
     }
 
-    .card-delete{
+    .card-delete {
         margin: 25px;
     }
 

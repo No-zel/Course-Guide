@@ -5,7 +5,24 @@ session_start();
 if (!isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "You need to login first";
     header('location: login.php');
-} 
+ 
+} else {
+
+    if ($_SESSION["TYPE"] == 1) {
+        echo '<style> 
+    
+        #AdminSet {
+            display: block !important;
+        }
+    
+        #AdminLog {
+            display: block !important;
+        }
+    
+        </style>';
+    }
+
+}
 
 ?>
 
@@ -43,7 +60,7 @@ if (!isset($_SESSION['UserID'])) {
                         <div class="card-p">This will delete your <strong>Account</strong></div>
                         <div class="card-button">
                             <button class="cancel" id="cancel">Cancel</button>
-                            <button class="delete">Delete</button>
+                            <button class="delete"> <a href="../Methods/delete-acc.php"> Delete </a> </button>
                         </div>
                     </div>
                 </div>
@@ -58,9 +75,8 @@ if (!isset($_SESSION['UserID'])) {
                     <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
                         <ul class="dropdown">
 
-                            <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
+                            <a href="logpage.php" id="AdminLog" class="option"> Admin Logs</a>
                             <a href="#" class="option" id="AdminSet">Admin Settings</a>
-                            <a href="Pages/change-pass.php" class="option">Settings</a>
                             <a href="../Methods/logout.php" class="option">Log out</a>
                             <a href="#" class="option delete-account" id="open-delete">Delete account</a>
                         </ul>

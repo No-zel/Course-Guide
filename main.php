@@ -79,7 +79,7 @@ if (isset($_SESSION['UserID'])) {
                 <div class="card-content">
                     <div class="card-p">This will delete your <strong>Account</strong></div>
                     <div class="card-button">
-                        <button class="cancel" id="cancel"> <a href="#"> Cancel </a> </button>
+                        <button class="cancel" id="cancel"> Cancel </button>
                         <button class="delete"> <a href="Methods/delete-acc.php"> Delete </a> </button>
                     </div>
                 </div>

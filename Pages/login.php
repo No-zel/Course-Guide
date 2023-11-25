@@ -42,8 +42,6 @@ session_start(); ?>
 
             <ul>
                 <li><a href="../main.php">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">About</a></li>
 
             </ul>
 

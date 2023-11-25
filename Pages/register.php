@@ -26,7 +26,7 @@
 
 
     <header>
-        <nav>
+        <nav style="opacity: 1;">
             <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
 
             <ul class="sidebar" id="sidebar">

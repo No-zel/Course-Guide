@@ -2,9 +2,18 @@
 session_start();
 
 //Checker if someones is by-passing the website (not login)
-if (!isset($_SESSION['UserID']) or $_SESSION["TYPE"] <> 1) {
+if ($_SESSION["TYPE"] <> 1) {
     $_SESSION['StatusError'] = "You need access";
     header('location: login.php');
+    
+} else {
+
+    echo '<style> 
+    
+    #AdminSet {
+        display: block !important;
+    }
+    </style>';
 }
 
 //DATABASE CONNECTION
@@ -66,17 +75,14 @@ $totalPages = ceil(count($logData) / $maxpage);
             </ul>
 
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="../main.php">Home</a></li>
                 <div class="settings" style="display: flex;">
-                    <li><span><?php echo $_SESSION["username"] ?> Username</span>
+                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
                         <ul class="dropdown">
-
-                            <a href="../Pages/logpage.php" class="option">Logs</a>
-                            <a href="../Pages/change-pass.php" class="option">Settings</a>
+                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
+                            <a href="change-pass.php" class="option">Settings</a>
                             <a href="../Methods/logout.php" class="option">Log out</a>
-                            <a href="#" class="option delete-account">Delete account</a>
+                            <a href="#" class="option delete-account" id="open-delete">Delete account</a>
                         </ul>
                     </li>
                 </div>
