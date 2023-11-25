@@ -134,7 +134,7 @@ if (isset($_SESSION['UserID'])) {
                 <li><a href="#homeFeatures">Feature</a></li>
                 <li><a href="#homeAbout">About</a></li>
                 <div class="settings">
-                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
+                    <li><span><?php echo $_SESSION["LName"] ?>, <?php echo $_SESSION["FName"] ?></span>
                         <ul class="dropdown">
 
                             <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
