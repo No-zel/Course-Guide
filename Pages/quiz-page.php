@@ -158,7 +158,7 @@ if (!isset($_SESSION['UserID'])) {
 
     <header >
         <nav style="opacity: 1; outline:none; justify-content:center;">
-            <div class="logo"> <a href="#"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
+            <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
         </nav>
     </header>
 

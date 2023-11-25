@@ -14,6 +14,8 @@ if (isset($_SESSION['UserID'])) {
 
     </style>';
 
+    $_SESSION["LoginQuiz"] = "Pages/quiz-page.php";
+
     if ($_SESSION["TYPE"] == 1) {
         echo '<style> 
     
@@ -27,6 +29,8 @@ if (isset($_SESSION['UserID'])) {
 
         </style>';
     }    
+} else {
+    $_SESSION["LoginQuiz"] = "Pages/register.php";
 }
 
 ?>
@@ -67,8 +71,8 @@ if (isset($_SESSION['UserID'])) {
                 <div class="card-content">
                     <div class="card-p">This will delete your <strong>Account</strong></div>
                     <div class="card-button">
-                        <button class="cancel">Cancel</button>
-                        <button class="delete">Delete</button>
+                        <button class="cancel"> <a href="#"> Cancel </a> </button>
+                        <button class="delete"> <a href="Methods/delete-acc.php"> Delete </a> </button>
                     </div>
                 </div>
             </div>
@@ -121,7 +125,7 @@ if (isset($_SESSION['UserID'])) {
                 <p>The easiest way to determine the most fitting courses for you.</p>
 
                 <div class="start">
-                    <button>Get started</button>
+                    <button> <a href="<?php echo $_SESSION["LoginQuiz"] ?>"> Get started </a> </button>
                 </div>
             </div>
 
