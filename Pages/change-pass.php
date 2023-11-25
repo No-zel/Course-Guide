@@ -28,28 +28,44 @@ if (!isset($_SESSION['UserID'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="change-pass-nav.css">
-   
-
+    <link rel="stylesheet" href="settings.css">
 
     <title> CGuide | Change password</title>
 </head>
 
 
 <body>
+    
+    <div class="open-confirmation" id="open-confirmation">
+                <div class="card-delete">
+                    <div class="card-h1">Delete account?</div>
+                    <div class="card-content">
+                        <div class="card-p">This will delete your <strong>Account</strong></div>
+                        <div class="card-button">
+                            <button class="cancel" id="cancel">Cancel</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <header>
-        <nav>
+        <nav style="opacity: 1">
             <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
             <ul>
                 <li><a href="../main.php">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#"><?php  echo $_SESSION["username"]  ?> | Profile</a>
-                <ul class="dropdown">
-                    <li class="option"><a href="../Pages/logpage.php">Logs</a></li>
-                    <li class="option"><a href="../Pages/change-pass.php">Settings</a></li>
-                    <li class="option"><a href="../Methods/logout.php">Log out</a></li>
-                </ul>
+                <div class="settings" style="display: flex;">
+                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
+                        <ul class="dropdown">
+
+                            <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
+                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
+                            <a href="Pages/change-pass.php" class="option">Settings</a>
+                            <a href="../Methods/logout.php" class="option">Log out</a>
+                            <a href="#" class="option delete-account" id="open-delete">Delete account</a>
+                        </ul>
+                    </li>
+                </div>
             </li>
                 
              
@@ -96,9 +112,9 @@ if (!isset($_SESSION['UserID'])) {
 
                     <button type="submit" class="btn-login">Confirm</button>
                   
-                    <div class="options">
-                        <span class="delete"> <a href="../Methods/delete-acc.php">Delete account</a></span>
-                    </div>
+                    <!-- <div class="options">
+                     <a href="../Methods/delete-acc.php" class="delete">Delete account</a>
+                    </div> -->
 
                     <div class="notifier-error">
                         <?php
@@ -126,6 +142,7 @@ if (!isset($_SESSION['UserID'])) {
 </body>
 
     <script src="../js/password.js"></script>
+    <script src="../js/change.pass.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js" integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -137,7 +154,9 @@ if (!isset($_SESSION['UserID'])) {
 
       
         tl.to('nav', { opacity: 1}, "-=1")
-        
+
+
+    
       
        
     </script>

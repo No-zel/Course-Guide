@@ -1,0 +1,138 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-background-color);
+    font-family: 'Poppins';
+
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+
+  }
+  .question p {
+    font-size: var(--title-question-size);
+    color: var(--white-accent-color);
+  }
+  
+  .quiz {
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+  
+  }
+  
+  .question {
+    display: none;
+  }
+  .options-input{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .options-input input[type="radio"] {
+    display: none;
+  }
+  
+
+  
+  /* Existing styles... */
+
+.options-input label {
+    display: inline-block;
+    background: var(--input-background);
+    font-size: var(--blue-text-size);
+    padding: 10px 10px; /* Adjust vertical padding */
+    cursor: pointer;
+    border: 1px solid #666;
+    border-radius: 5px;
+    text-align: center; /* Center text */
+    transition: background-color 0.3s ease;
+    color: var(--input-text-color);
+
+}
+
+.options-input label:hover {
+    background-color: #555;
+}
+
+.options-input input[type="radio"] {
+    display: none;
+}
+
+/* Media queries for responsiveness */
+
+.options-input label:hover {
+    background-color: #555; /* Darken the background on hover */
+  }
+  
+  .options-input input[type="radio"]:checked+label {
+    background: var( --btnlogin-background-color);
+    color: white;
+  }
+  
+  .button-div{
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    max-width: 450px;
+    padding:  0 20px;
+    width: 100%;
+    
+  }
+  .back{
+    background: none;
+    font-family: 'Poppins';
+    font-size: var(--blue-text-size);
+    padding: 10px 30px;
+    border: none;
+    outline: 1px solid var(--dark-outline-color);
+    color: var(--white-accent-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .back:hover{
+    background: var(--table-header-color);
+  }
+
+  .next{
+    font-family: 'Poppins';
+    background: var( --btnlogin-background-color);
+    font-size: var(--blue-text-size);
+    padding: 10px 30px;
+    border: none;
+    color: var(--white-accent-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .next:hover{
+    background:#043a8b;
+  }
+
+  .submit{
+    font-family: 'Poppins';
+    font-size: var(--blue-text-size);
+    background: var( --btnlogin-background-color);
+    padding: 10px 30px;
+    border: none;
+    color: var(--white-accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+  }
+
+ .submit:hover{
+    background:#043a8b;
+ }

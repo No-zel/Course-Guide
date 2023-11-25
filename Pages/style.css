@@ -27,7 +27,12 @@
     --section-padding: 25px;
     --section-margin: 25px;
 }
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 20rem ;
 
+
+    }
 ::-webkit-scrollbar {
     width: 12px;
     height: 5px;
@@ -260,17 +265,20 @@ li a {
 }
 
 .start button {
-    font-size: 20px;
     padding: 10px 30px;
     border-radius: 8px;
     border: none;
     font-family: 'Poppins';
     background: rgb(217, 217, 217);
     background: linear-gradient(-250deg, rgba(134, 134, 134, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    color: white;
     cursor: pointer;
     outline: 1px solid var(--dark-outline-color);
     transition: all 0.3s ease;
+}
+.start a{
+    text-decoration: none;
+    font-size: var(--p-text-size);
+    color: var(--white-accent-color);
 }
 
 .start button:hover {
