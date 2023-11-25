@@ -118,8 +118,8 @@ if (isset($_SESSION['UserID'])) {
                     <i class="fa-solid fa-xmark"></i>
                 </div>
 
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#homeFeatures">Feature</a></li>
+                <li><a href="#homeAbout">About</a></li>
                 <div class="log-in-btn sidebar-logout" id="PhoneLogin"><button><a href="./Pages/login.php">Log in</a></button></div>
                 <li><a href="Pages/logpage.php" id="PhoneAdminlog" class="option afterlogin"> Admin Logs</a> </li>
                 <li><a href="Pages/change-pass.php" class="option afterlogin">Settings</a></li>
