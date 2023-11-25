@@ -7,6 +7,10 @@ if (isset($_SESSION['UserID'])) {
     .log-in-btn {
         display: none;
     }
+
+    #PhoneLogin {
+        display: none;
+    }
     
     .settings {
         display: block !important;
@@ -96,7 +100,21 @@ if (isset($_SESSION['UserID'])) {
            
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
-                <div class="log-in-btn sidebar-logout"><button><a href="./Pages/login.php">Log in</a></button></div>
+
+                 <div class="settings">
+                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
+                        <ul class="dropdown">
+
+                            <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
+                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
+                            <a href="Pages/change-pass.php" class="option">Settings</a>
+                            <a href="Methods/logout.php" class="option">Log out</a>
+                            <a href="#" class="option delete-account" id="open-delete">Delete account</a>
+                        </ul>
+                    </li>
+                </div> 
+
+                <div class="log-in-btn sidebar-logout" id="PhoneLogin"><button><a href="./Pages/login.php">Log in</a></button></div>
             </ul>
 
             <ul>
