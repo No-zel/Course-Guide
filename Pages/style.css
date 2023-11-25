@@ -136,6 +136,9 @@ li a {
     display: none;
 }
 
+#AdminLogsidebar {
+    display: none;
+}
 
 .sidebar {
     position: fixed;

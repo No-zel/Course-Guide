@@ -5,11 +5,16 @@ session_start();
 if ($_SESSION["TYPE"] <> 1) {
     $_SESSION['StatusError'] = "You need access";
     header('location: login.php');
+
+    echo '<style>     
+    .afterlogin {
+        display: none !important;
+    } </style>';
+    
     
 } else {
-
     echo '<style> 
-    
+
     #AdminSet {
         display: block !important;
     }
@@ -68,10 +73,9 @@ $totalPages = ceil(count($logData) / $maxpage);
                 <div class="close-btn close">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                <li><a href="../main.php">Home</a></li>
-                <li><a href="#">Feature</a></li>
-                <li><a href="#">About</a></li>
-               
+                <li><a href="../main.php">Home</a></li> 
+                <li><a href="change-pass.php" class="option afterlogin">Settings</a></li>
+                <li><a href="../Methods/logout.php" class="option afterlogin">Log out</a></li>
             </ul>
 
             <ul>
@@ -90,7 +94,7 @@ $totalPages = ceil(count($logData) / $maxpage);
             </ul>
 
             <div class="hamburger " id="open-nav">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" id="open-nav1"></i>
             </div>
         </nav>
     </header>
@@ -128,7 +132,7 @@ $totalPages = ceil(count($logData) / $maxpage);
         <a href="../Pages/change-pass.php"> Pages </a>
     </div>
 </div>
-
+<script src="../js/nav.js"> </script>
 <script>
 
         let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 2}});
@@ -137,9 +141,7 @@ $totalPages = ceil(count($logData) / $maxpage);
 
       
         tl.to('nav', { opacity: 1}, "-=1")
-
-
-
-    </script>
+   
+</script>
 </body>
 </html>

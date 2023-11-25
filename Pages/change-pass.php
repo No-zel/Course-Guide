@@ -6,24 +6,16 @@ if (!isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "You need to login first";
     header('location: login.php');
  
-} else {
 
-    if ($_SESSION["TYPE"] == 1) {
-        echo '<style> 
+    echo '<style> 
     
-        #AdminSet {
-            display: block !important;
-        }
-    
-        #AdminLog {
-            display: block !important;
-        }
-    
-        </style>';
+    .afterlogin {
+        display: none !important;
     }
 
-}
+    </style>';
 
+} 
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +61,14 @@ if (!isset($_SESSION['UserID'])) {
     <header>
         <nav style="opacity: 1">
             <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
+            <ul class="sidebar" id="sidebar">
+                <div class="close-btn close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <li><a href="../main.php">Home</a></li>
+                <li><a href="../Methods/logout.php" class="option afterlogin">Log out</a></li>
+                <li><a href="#" class="option delete-account afterlogin" id="open-delete">Delete account</a></li>  
+            </ul>
             <ul>
                 <li><a href="../main.php">Home</a></li>
                 <div class="settings" style="display: flex;">
@@ -88,7 +88,7 @@ if (!isset($_SESSION['UserID'])) {
                    
             </ul>
 
-            <div class="hamburger">
+            <div class="hamburger" id="open-nav">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
@@ -172,7 +172,25 @@ if (!isset($_SESSION['UserID'])) {
         tl.to('nav', { opacity: 1}, "-=1")
 
 
-    
+                const sidebar = document.getElementById("sidebar");
+                const OpenNav = document.getElementById("open-nav");
+                const CloseNav = document.getElementsByClassName("close")[0];
+
+
+        OpenNav.addEventListener("click", function() {
+            sidebar.classList.add("show");
+        });
+        
+        CloseNav.addEventListener("click", function() {
+            sidebar.classList.remove("show");
+        });
+        
+        window.addEventListener("click", function(event) {
+            if (event.target === sidebar) {
+                sidebar.classList.remove("show");
+            }
+        });
+                       
       
        
     </script>

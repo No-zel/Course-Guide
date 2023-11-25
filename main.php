@@ -8,6 +8,10 @@ if (isset($_SESSION['UserID'])) {
         display: none;
     }
 
+    .afterlogin {
+        display: block !important;
+    }
+
     #PhoneLogin {
         display: none;
     }
@@ -34,8 +38,24 @@ if (isset($_SESSION['UserID'])) {
         }
 
         </style>';
-    }    
+    } else {
+        echo '<style> 
+    
+        #PhoneAdminlog {
+            display: none !important;
+        }
+    
+        </style>';
+    }   
 } else {
+
+    echo '<style> 
+    
+    .afterlogin {
+        display: none !important;
+    }
+
+    </style>';
     $_SESSION["LoginQuiz"] = "Pages/register.php";
 
 
@@ -97,24 +117,16 @@ if (isset($_SESSION['UserID'])) {
                 <div class="close-btn close">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-           
+
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
-
-                 <div class="settings">
-                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
-                        <ul class="dropdown">
-
-                            <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
-                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
-                            <a href="Pages/change-pass.php" class="option">Settings</a>
-                            <a href="Methods/logout.php" class="option">Log out</a>
-                            <a href="#" class="option delete-account" id="open-delete">Delete account</a>
-                        </ul>
-                    </li>
-                </div> 
-
                 <div class="log-in-btn sidebar-logout" id="PhoneLogin"><button><a href="./Pages/login.php">Log in</a></button></div>
+                <li><a href="Pages/logpage.php" id="PhoneAdminlog" class="option afterlogin"> Admin Logs</a> </li>
+                <li><a href="Pages/change-pass.php" class="option afterlogin">Settings</a></li>
+                <li><a href="Methods/logout.php" class="option afterlogin">Log out</a></li>
+                <li><a href="#" class="option delete-account afterlogin" id="open-delete">Delete account</a></li>
+
+                
             </ul>
 
             <ul>
