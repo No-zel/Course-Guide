@@ -121,17 +121,19 @@ body {
   }
 
   .submit{
-    font-family: 'Poppins';
-    font-size: var(--blue-text-size);
     background: var( --btnlogin-background-color);
     padding: 10px 30px;
     border: none;
+    font-family: 'Poppins';
+    font-size: var(--blue-text-size);
     color: var(--white-accent-color);
+    text-decoration: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.5s ease;
 
   }
+ 
 
  .submit:hover{
     background:#043a8b;

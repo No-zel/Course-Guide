@@ -186,11 +186,13 @@ if (!isset($_SESSION['UserID'])) {
                     <label for="Q7-E"> Art History </label> 
                     <input type="radio" name="Q7-answer" id="Q7-F" value="F">
                     <label for="Q7-F"> Manufacturing </label> 
-                    <button type="submit" class="submit">Submit</button>
+                    <!-- <button class="submit" id="submit"> <a href="../result.php">Submit</a></button> -->
+                    <a href="./result.php" class="submit">Submit</a>
                 </div>
                 
               
             </div>
+
             
   
         </div>
@@ -203,11 +205,15 @@ if (!isset($_SESSION['UserID'])) {
        
         
 </main>
-   
+
+
 </body>
 
 
     <script>
+ 
+
+    
 
         const questions = document.querySelectorAll('.question');
         let currentQuestion = 0;
