@@ -16,6 +16,8 @@ if (isset($_SESSION['UserID'])) {
 
     $_SESSION["LoginQuiz"] = "Pages/quiz-page.php";
 
+    
+
     if ($_SESSION["TYPE"] == 1) {
         echo '<style> 
     
@@ -31,8 +33,12 @@ if (isset($_SESSION['UserID'])) {
     }    
 } else {
     $_SESSION["LoginQuiz"] = "Pages/register.php";
+
+
+    echo '<script>reinitializeLenis();</script>';
 }
 
+   
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +60,8 @@ if (isset($_SESSION['UserID'])) {
     <link rel="stylesheet" href="./Pages/settings.css">
      <!-- Navigation Javascript -->
     <script src="./js/nav.js" defer></script>
+     <!-- Homepage Javascript -->
+     <script src="./js/index.js" defer></script>
     <title>CGuide AI</title>
 </head>
 
@@ -71,7 +79,7 @@ if (isset($_SESSION['UserID'])) {
                 <div class="card-content">
                     <div class="card-p">This will delete your <strong>Account</strong></div>
                     <div class="card-button">
-                        <button class="cancel"> <a href="#"> Cancel </a> </button>
+                        <button class="cancel" id="cancel"> <a href="#"> Cancel </a> </button>
                         <button class="delete"> <a href="Methods/delete-acc.php"> Delete </a> </button>
                     </div>
                 </div>
@@ -85,14 +93,14 @@ if (isset($_SESSION['UserID'])) {
                 <div class="close-btn close">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                <li><a href="#">Home</a></li>
+           
                 <li><a href="#">Feature</a></li>
                 <li><a href="#">About</a></li>
                 <div class="log-in-btn sidebar-logout"><button><a href="./Pages/login.php">Log in</a></button></div>
             </ul>
 
             <ul>
-                <li><a href="#">Home</a></li>
+             
                 <li><a href="#homeFeatures">Feature</a></li>
                 <li><a href="#homeAbout">About</a></li>
                 <div class="settings">
@@ -162,8 +170,8 @@ if (isset($_SESSION['UserID'])) {
                 <h1 class="primary-title">Choose your course now</h1>
                 <p class="secondary-p">Lorem ipsum, dolor sit amet consectetur!</p>
                 <div class="cta-buttons">
-                    <a href="#" class="get-started">Get started</a>
-                    <a href="#" class="sign-up">Sign up</a>
+                    <a href="Pages/quiz-page.php" class="get-started">Get started</a>
+                    <a href="./Pages/register.php" class="sign-up">Sign up</a>
                 </div>
 
 
@@ -261,7 +269,7 @@ if (isset($_SESSION['UserID'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-
+<!-- 
     <script>
       
         let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2 } });
@@ -332,7 +340,7 @@ if (isset($_SESSION['UserID'])) {
             modal.classList.remove("show");
         }
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
