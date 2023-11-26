@@ -59,7 +59,7 @@ if (isset($_SESSION['UserID'])) {
     $_SESSION["LoginQuiz"] = "Pages/register.php";
 
 
-    echo '<script>reinitializeLenis();</script>';
+
 }
 
    

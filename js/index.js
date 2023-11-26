@@ -58,6 +58,8 @@ gsap.to(section, {
  
  openModalBtn.addEventListener("click", function() {
    modal.classList.add("show");
+
+
  });
  
  closeModalBtn.addEventListener("click", function() {
