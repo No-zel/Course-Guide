@@ -67,7 +67,7 @@ if (!isset($_SESSION['UserID'])) {
                 </div>
                 <li><a href="../main.php">Home</a></li>
                 <li><a href="../Methods/logout.php" class="option afterlogin">Log out</a></li>
-                <li><a href="#" class="option delete-account afterlogin" id="open-delete">Delete account</a></li>  
+                <li><a href="#" class="option delete-account afterlogin" id="open-delete-mobile">Delete account</a></li>  
             </ul>
             <ul>
                 <li><a href="../main.php">Home</a></li>

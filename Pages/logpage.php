@@ -2,7 +2,7 @@
 session_start();
 
 //Checker if someones is by-passing the website (not login)
-if (isset($_SESSION["TYPE"]) !== 1 || !isset($_SESSION['UserID'])) {
+if (isset($_SESSION["TYPE"]) != 1 || !isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "You need access";
 
     header('location: login.php');
@@ -89,7 +89,6 @@ $totalPages = ceil(count($logData) / $maxpage);
                             <a href="#" class="option" id="AdminSet">Admin Settings</a>
                             <a href="change-pass.php" class="option">Settings</a>
                             <a href="../Methods/logout.php" class="option">Log out</a>
-                            <a href="#" class="option delete-account" id="open-delete">Delete account</a>
                         </ul>
                     </li>
                 </div>

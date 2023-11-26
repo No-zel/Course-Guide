@@ -124,7 +124,7 @@ if (isset($_SESSION['UserID'])) {
                 <li><a href="Pages/logpage.php" id="PhoneAdminlog" class="option afterlogin"> Admin Logs</a> </li>
                 <li><a href="Pages/change-pass.php" class="option afterlogin">Settings</a></li>
                 <li><a href="Methods/logout.php" class="option afterlogin">Log out</a></li>
-                <li><a href="#" class="option delete-account afterlogin" id="open-delete">Delete account</a></li>
+                <li><a href="#" class="option delete-account afterlogin">Delete account</a></li>
 
                 
             </ul>
