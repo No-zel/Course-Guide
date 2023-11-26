@@ -1,5 +1,10 @@
 Open Apache first in Xampp first
 
-then go to this link: http://localhost/Course-Guide/Pages/login.html
+then go to this link: http://localhost/Course-Guide2/main.php
+
+for admin access:
+ADMIN ACCOUNT:
+user: z
+password: z
 
 Enjoy, Thank you!

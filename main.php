@@ -58,11 +58,7 @@ if (isset($_SESSION['UserID'])) {
     $_SESSION["ButtonStart"] = "Get started";
     $_SESSION["LoginQuiz"] = "Pages/register.php";
 
-
-
-}
-
-   
+} 
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +120,7 @@ if (isset($_SESSION['UserID'])) {
                 <li><a href="Pages/logpage.php" id="PhoneAdminlog" class="option afterlogin"> Admin Logs</a> </li>
                 <li><a href="Pages/change-pass.php" class="option afterlogin">Settings</a></li>
                 <li><a href="Methods/logout.php" class="option afterlogin">Log out</a></li>
-                <li><a href="#" class="option delete-account afterlogin">Delete account</a></li>
+                <li><a href="Methods/delete-acc.php" class="option delete-account afterlogin">Delete account</a></li>
 
                 
             </ul>
@@ -137,8 +133,8 @@ if (isset($_SESSION['UserID'])) {
                     <li><span><?php echo $_SESSION["LName"] ?>, <?php echo $_SESSION["FName"] ?></span>
                         <ul class="dropdown">
 
-                            <a href="Pages/logpage.php" id="AdminLog" class="option"> Admin Logs</a>
-                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
+                            <a href="Pages/logpage.php" id="AdminLog" class="option">Audit Trail</a>
+                            <a href="Pages/admin.php" class="option" id="AdminSet">Admin</a>
                             <a href="Pages/change-pass.php" class="option">Settings</a>
                             <a href="Methods/logout.php" class="option">Log out</a>
                             <a href="#" class="option delete-account" id="open-delete">Delete account</a>

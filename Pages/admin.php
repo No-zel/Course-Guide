@@ -4,34 +4,38 @@ session_start();
 //Checker if someones is by-passing the website (not login)
 if (!isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "You need to login first";
-    header('location: login.php');
- 
 
-    echo '<style> 
-    
+    header('location: login.php');
+
+    echo '<style>  
+
     .afterlogin {
         display: none !important;
-    }
-
+    } 
     </style>';
-
+    
 } else {
-    
-    if ($_SESSION["TYPE"] == 1) {
+
+    if ($_SESSION["TYPE"] != 1) {
+
+        $_SESSION['StatusError'] = "You need access";
+        session_unset();
+        session_destroy();
+        header('location: login.php');
+
+
+    } else {
+
         echo '<style> 
-    
-        #AdminSet {
-            display: block !important;
-        }
 
         #AdminLog {
             display: block !important;
         }
-
         </style>';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,9 +94,9 @@ if (!isset($_SESSION['UserID'])) {
                     <li><span><?php echo $_SESSION["LName"] ?>, <?php echo $_SESSION["FName"] ?></span>
                         <ul class="dropdown">
                             <a href="logpage.php" id="AdminLog" class="option">Audit Trail</a>
-                            <a href="admin.php" class="option" id="AdminSet">Admin</a>
+                            <a href="change-pass.php" class="option">Settings</a>
                             <a href="../Methods/logout.php" class="option">Log out</a>
-                            <a href="#" class="option delete-account" id="open-delete">Delete account</a>
+                         <!--   <a href="#" class="option delete-account" id="open-delete">Delete account</a> -->
                         </ul>
                     </li>
                 </div>
@@ -117,17 +121,21 @@ if (!isset($_SESSION['UserID'])) {
                 <div class="top-section">
 
                     <div class="title-info">
-                        <h3 class="user-account"><?php echo $_SESSION["LName"];?>, <?php echo $_SESSION["FName"];  ?>   ·  CGuide</h3>
-                        <h2 class="system-header">User Setting</h2>
+                        <h3 class="user-account">CGuide</h3>
+                        <h2 class="system-header">Admin Setting</h2>
                        
                     </div>
 
                     <div class="form_each">
-                    <input type="text" id="fname" name="fname" placeholder="First name" required>
+                    <input type="text" id="uuser" name="uuser" placeholder="Target Username" required>
                     </div>
 
                     <div class="form_each">
-                    <input type="text" id="lname" name="lname" placeholder="Last name" required>
+                    <input type="text" id="fname" name="fname" placeholder="New First name" required>
+                    </div>
+
+                    <div class="form_each">
+                    <input type="text" id="lname" name="lname" placeholder="New Last name" required>
                     </div>
 
                     <div class="form_each">
@@ -140,7 +148,7 @@ if (!isset($_SESSION['UserID'])) {
 
                     </div>
 
-                    <button type="submit" class="btn-login">Confirm</button>
+                 <!--   <button type="submit" class="btn-login">Confirm</button> -->
                   
                     <!-- <div class="options">
                      <a href="../Methods/delete-acc.php" class="delete">Delete account</a>
@@ -161,9 +169,9 @@ if (!isset($_SESSION['UserID'])) {
 
         <div class="title">
             <div class="title-wrapper">
-                <h2>Welcome to</h2>
-                <h1>CGuide AI</h1>
-                <p>Discover Your Official Course Now</p>
+                <h2>Welcome</h2>
+                <h1><?php echo $_SESSION["username"] ?> </h1>
+                <p>Warning: Page is still in construction!</p>
 
             </div>
         </div>

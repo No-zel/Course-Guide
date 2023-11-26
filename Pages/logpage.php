@@ -2,26 +2,37 @@
 session_start();
 
 //Checker if someones is by-passing the website (not login)
-if (isset($_SESSION["TYPE"]) != 1 || !isset($_SESSION['UserID'])) {
-    $_SESSION['StatusError'] = "You need access";
+if (!isset($_SESSION['UserID'])) {
+    $_SESSION['StatusError'] = "You need to login first";
 
     header('location: login.php');
 
-    echo '<style>     
+    echo '<style>  
+
     .afterlogin {
         display: none !important;
-    } </style>';
-    
-    session_unset();
-    session_destroy();
-
-} else {
-    echo '<style> 
-
-    #AdminSet {
-        display: block !important;
-    }
+    } 
     </style>';
+    
+} else {
+
+    if ($_SESSION["TYPE"] != 1) {
+
+        $_SESSION['StatusError'] = "You need access";
+        session_unset();
+        session_destroy();
+        header('location: login.php');
+
+
+    } else {
+
+        echo '<style> 
+
+        #AdminSet {
+            display: block !important;
+        }
+        </style>';
+    }
 }
 
 //DATABASE CONNECTION
@@ -86,7 +97,7 @@ $totalPages = ceil(count($logData) / $maxpage);
                 <div class="settings" style="display: flex;">
                     <li><span><?php echo $_SESSION["LName"] ?>, <?php echo $_SESSION["FName"] ?></span>
                         <ul class="dropdown">
-                            <a href="#" class="option" id="AdminSet">Admin Settings</a>
+                            <a href="admin.php" class="option" id="AdminSet">Admin</a>
                             <a href="change-pass.php" class="option">Settings</a>
                             <a href="../Methods/logout.php" class="option">Log out</a>
                         </ul>
