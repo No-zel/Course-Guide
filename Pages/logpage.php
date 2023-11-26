@@ -2,7 +2,7 @@
 session_start();
 
 //Checker if someones is by-passing the website (not login)
-if ($_SESSION["TYPE"] !== 1 || !isset($_SESSION['UserID'])) {
+if (isset($_SESSION["TYPE"]) !== 1 || !isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "You need access";
 
     header('location: login.php');
