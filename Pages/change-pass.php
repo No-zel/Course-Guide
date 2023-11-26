@@ -72,7 +72,7 @@ if (!isset($_SESSION['UserID'])) {
             <ul>
                 <li><a href="../main.php">Home</a></li>
                 <div class="settings" style="display: flex;">
-                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
+                    <li><span><?php echo $_SESSION["LName"] ?>, <?php echo $_SESSION["FName"] ?></span>
                         <ul class="dropdown">
 
                             <a href="logpage.php" id="AdminLog" class="option"> Admin Logs</a>

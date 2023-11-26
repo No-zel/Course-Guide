@@ -2,8 +2,9 @@
 session_start();
 
 //Checker if someones is by-passing the website (not login)
-if ($_SESSION["TYPE"] <> 1) {
+if ($_SESSION["TYPE"] !== 1 || !isset($_SESSION['UserID'])) {
     $_SESSION['StatusError'] = "You need access";
+
     header('location: login.php');
 
     echo '<style>     
@@ -11,7 +12,9 @@ if ($_SESSION["TYPE"] <> 1) {
         display: none !important;
     } </style>';
     
-    
+    session_unset();
+    session_destroy();
+
 } else {
     echo '<style> 
 
@@ -81,7 +84,7 @@ $totalPages = ceil(count($logData) / $maxpage);
             <ul>
                 <li><a href="../main.php">Home</a></li>
                 <div class="settings" style="display: flex;">
-                    <li><span><?php echo $_SESSION["username"] ?> | Profile</span>
+                    <li><span><?php echo $_SESSION["LName"] ?>, <?php echo $_SESSION["FName"] ?></span>
                         <ul class="dropdown">
                             <a href="#" class="option" id="AdminSet">Admin Settings</a>
                             <a href="change-pass.php" class="option">Settings</a>
@@ -129,7 +132,7 @@ $totalPages = ceil(count($logData) / $maxpage);
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
             <a href="?pageindex=<?= $i ?>"><?= $i ?></a>
         <?php endfor; ?>
-        <a href="../Pages/change-pass.php"> Pages </a>
+        <a href="#"> Pages </a>
     </div>
 </div>
 <script src="../js/nav.js"> </script>
