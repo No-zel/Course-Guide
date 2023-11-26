@@ -21,9 +21,8 @@ if (isset($_SESSION['UserID'])) {
     }
 
     </style>';
-
+    $_SESSION["ButtonStart"] = "Take a quiz";
     $_SESSION["LoginQuiz"] = "Pages/quiz-page.php";
-
     
 
     if ($_SESSION["TYPE"] == 1) {
@@ -56,6 +55,7 @@ if (isset($_SESSION['UserID'])) {
     }
 
     </style>';
+    $_SESSION["ButtonStart"] = "Get started";
     $_SESSION["LoginQuiz"] = "Pages/register.php";
 
 
@@ -163,7 +163,7 @@ if (isset($_SESSION['UserID'])) {
                 <p>The easiest way to determine the most fitting courses for you.</p>
 
                 <div class="start">
-                    <button> <a href="<?php echo $_SESSION["LoginQuiz"] ?>"> Get started </a> </button>
+                    <button> <a href="<?php echo $_SESSION["LoginQuiz"] ?>"> <?php echo $_SESSION["ButtonStart"] ?> </a> </button>
                 </div>
             </div>
 
