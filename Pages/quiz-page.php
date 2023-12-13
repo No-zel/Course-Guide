@@ -186,8 +186,7 @@ if (!isset($_SESSION['UserID'])) {
                     <label for="Q7-E"> Art History </label> 
                     <input type="radio" name="Q7-answer" id="Q7-F" value="F">
                     <label for="Q7-F"> Manufacturing </label> 
-                    <!-- <button class="submit" id="submit"> <a href="../result.php">Submit</a></button> -->
-                    <a href="./result.php" class="submit">Submit</a>
+                    <button> <a class="submit" type="submit">Submit</a> </button>
                 </div>
                 
               
@@ -196,7 +195,7 @@ if (!isset($_SESSION['UserID'])) {
             
   
         </div>
-        
+
         </form>
         <div class="button-div">
          <button id="backButton" class="back">Back</button>

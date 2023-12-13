@@ -75,33 +75,39 @@ if ($Q7Answer == "D") { $Analytical++;}
 if ($Q7Answer == "E") { $Creative++;}
 if ($Q7Answer == "F") { $Organized++;}
 
-echo $Creative;
-echo $Organized;
-echo $Social;
-echo $Analytical;
-echo $Practical;
-echo $Enterprising; 
 
+//ARRAYS
+$crea = array("Mass Communication", "Fine Arts", "Architecture", "Multimedia Arts", "Fashion Design");
+$org = array("Legal Management", "History", "Human Resources", "Public Administration", "Library and Information Science");
+$analy = array("Computer Science", "Statistics", "Physics", "Mathematics", "Mechanical/ Electrical Engineering","Economics","Philosophy Logic","Chemistry");
+$soc = array("Education", "Nursing", "Medicine", "Veterinary Medicine", "Psychology","Hotel and Restaurant Management/Tourism");
+$prac = array("Sports Science", "Maritime", "Criminology", "Sports Management", "Agriculture", "Fisheries");
+$lead = array("Marketing", "Business", "Management", "Accountancy", "Entrepreneurship");
+
+//ARRAYS
 $categories = array(
-    array('name' => 'Creative', 'value' => $Creative),
-    array('name' => 'Organized', 'value' => $Organized),
-    array('name' => 'Social', 'value' => $Social),
-    array('name' => 'Analytical', 'value' => $Analytical),
-    array('name' => 'Practical', 'value' => $Practical),
-    array('name' => 'Enterprising', 'value' => $Enterprising)
+    array('name' => 'Creative', 'value' => $Creative,'category' => $crea),
+    array('name' => 'Organized', 'value' => $Organized,'category' => $org),
+    array('name' => 'Analytical', 'value' => $Analytical,'category' => $analy),
+    array('name' => 'Social', 'value' => $Social,'category' => $soc),
+    array('name' => 'Practical', 'value' => $Practical,'category' => $prac),
+    array('name' => 'Enterprising', 'value' => $Enterprising,'category' => $lead)
 );
 
 //SORT THE ARRAYS
 usort($categories, function ($a, $b) {
-    return $b['value'] - $a['value'];
-});
+    return $b['value'] - $a['value'];});
 // PRINT THE SORTED ARRAY
 foreach ($categories as $category) {
-    echo $category['name'] . ': ' . $category['value'] . '<br>';
-}
-// CALL THE ARRAY BY INDEX
-echo $categories[0]['name'] . ': ' . $categories[0]['value'] . '<br>';
+    echo $category['name'] . ': ' . $category['value'] . '<br>';}
+// CALL THE ARRAY BY INDEXs
+echo '<br>' ,$categories[0]['name'] . ': ' . $categories[0]['value'] . '<br>';
 
 
+//FUNCTION RECOMENDATION
+$TopCategory = $categories[0]['category'];
+$Index = rand(0,count($TopCategory)-1);
 
+
+echo'Recommended Field: ',$TopCategory[$Index];
 ?>
