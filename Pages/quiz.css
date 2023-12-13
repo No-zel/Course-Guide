@@ -140,3 +140,9 @@ body {
  .submit:hover{
     background:#043a8b;
  }
+
+ button{
+  background: none;
+  appearance: none;
+  border: none;
+ }
