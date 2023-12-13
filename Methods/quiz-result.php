@@ -137,7 +137,7 @@ $dlead = array("Marketing courses cover a wide range of topics related to promot
 
 $categories = array(
     array('name' => 'Creative', 'value' => $Creative,'category' => $crea,'discription' => $dcrea, 'school' => $csch),
-    array('name' => 'Organized', 'value' => $Organized,'category' => $org,'discription' => $org, 'school' => $orgsch),
+    array('name' => 'Organized', 'value' => $Organized,'category' => $org,'discription' => $dorg, 'school' => $orgsch),
     array('name' => 'Analytical', 'value' => $Analytical,'category' => $analy,'discription' => $danaly, 'school' => $analysch),
     array('name' => 'Social', 'value' => $Social,'category' => $soc,'discription' => $dsoc, 'school' => $socsch),
     array('name' => 'Practical', 'value' => $Practical,'category' => $prac,'discription' => $dprac, 'school' => $pracsch),
@@ -155,7 +155,43 @@ $TopSchool = $categories[0]['school'];
 $Index = rand(0,count($TopCategory)-1);
 
 
-echo'Recommended Field: ',$TopCategory[$Index],'<br>','Discription: ',$TopDiscription[$Index], '<br>', 'School: ', $TopSchool[$Index];
+// echo'Recommended Field: ',$TopCategory[$Index],'<br>','Discription: ',$TopDiscription[$Index], '<br>', 'School: ', $TopSchool[$Index];
 ?>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Pages/style.css">
+    <title>Congratulations | View Results</title>
+</head>
+<body>
+    <header >
+        <nav style="opacity: 1; outline:none; justify-content:center;">
+            <div class="logo"> <a href="../main.php"><img src="../assets/logo.png" alt="logo">CGuide</a></div>
+        </nav>
+    </header>
+
+
+    <div class="result-container">
+        <?php 
+            echo' <h1 class="field-title"> Recommended Field: </h1>',   $TopCategory[$Index] ,
+            '<br>','
+            <h2 class="descrip-title"> Description: </h2>', $TopDiscription[$Index],
+            '<br>','
+            <h2 class="descrip-title"> School: </h2>', $TopSchool[$Index];
+        ?>
+    </div>
+    
+</body>
+</html>
