@@ -159,7 +159,7 @@ $endPage = min($startPage + $pagesToShow - 1, $totalPages);
          
          <thead>
         
-           <th colspan="5" class="log-history">List of users</th>
+           <th colspan="6" class="log-history">List of users</th>
     
          <tr class="responsive-display-none">
              <th>ID</th>
@@ -167,6 +167,7 @@ $endPage = min($startPage + $pagesToShow - 1, $totalPages);
              <th>Last Name</th>
              <th>Username</th>
              <th>Email</th>
+             <th>Manage</th>
          </tr>
          </thead>
          <?php foreach ($logs as $entry): ?>
@@ -176,6 +177,7 @@ $endPage = min($startPage + $pagesToShow - 1, $totalPages);
                  <td data-title="Last Name"><?= $entry['LNAME'] ?></td>
                  <td data-title="Username"><?= $entry['USERNAME'] ?></td>
                  <td data-title="Email"><?= $entry['EMAIL'] ?></td>
+                 <td data-title="Manage"> <button> Delete </button> </th>
              </tr>
          <?php endforeach; ?>
      </table>
