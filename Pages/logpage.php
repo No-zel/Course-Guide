@@ -115,7 +115,7 @@ $totalPages = ceil(count($logData) / $maxpage);
 
 <div class="log-container" >
     
- 
+
     <table>
        
         <thead>

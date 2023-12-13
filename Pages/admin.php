@@ -34,6 +34,35 @@ if (!isset($_SESSION['UserID'])) {
         </style>';
     }
 }
+
+//DATABASE CONNECTION
+$dbservername = "group5-admin.cwcul3ylqcmq.ap-southeast-1.rds.amazonaws.com";
+$dbusername = "admin";
+$dbname = "UserAccounts";
+$dbpassword = "ilovecookies696969";
+//CONNETION
+try {
+    $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "SELECT * FROM Members";
+    $result = $conn->query($sql);
+    $logData = $result->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+$maxpage = 5;
+$page = isset($_GET['pageindex']) ? intval($_GET['pageindex']):1;
+
+$index = ($page - 1) * $maxpage;
+
+// Get the logs for the current page
+$logs = array_slice($logData, $index, $maxpage);
+
+// calculates for the pages
+$totalPages = ceil(count($logData) / $maxpage);
+
 ?>
 
 
@@ -112,71 +141,33 @@ if (!isset($_SESSION['UserID'])) {
         </nav>
     </header>
 
-    <section class="login-section">
 
-        <div class="login-card">
+    <table>
+       
+       <thead>
+      
+         <th colspan="3" class="log-history">List of users</th>
 
-            <form action="../Methods/change-pass.php" method="POST" class="change-container">
+       <tr class="responsive-display-none">
+           <th>ID</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Username</th>
+           <th>Email</th>
+       </tr>
+       </thead>
+       <?php foreach ($logs as $entry): ?>
+           <tr>
+               <td data-title="ID" ><?= $entry['ID'] ?></td>
+               <td data-title="First Name"><?= $entry['FNAME'] ?></td>
+               <td data-title="Last Name"><?= $entry['LNAME'] ?></td>
+               <td data-title="Username"><?= $entry['USERNAME'] ?></td>
+               <td data-title="Email"><?= $entry['EMAIL'] ?></td>
+           </tr>
+       <?php endforeach; ?>
+   </table>
 
-                <div class="top-section">
-
-                    <div class="title-info">
-                        <h3 class="user-account">CGuide</h3>
-                        <h2 class="system-header">Admin Setting</h2>
-                       
-                    </div>
-
-                    <div class="form_each">
-                    <input type="text" id="uuser" name="uuser" placeholder="Target Username" required>
-                    </div>
-
-                    <div class="form_each">
-                    <input type="text" id="fname" name="fname" placeholder="New First name" required>
-                    </div>
-
-                    <div class="form_each">
-                    <input type="text" id="lname" name="lname" placeholder="New Last name" required>
-                    </div>
-
-                    <div class="form_each">
-                    <input type="password" id="oldPassword" name="oldPassword" placeholder="New Password" required>
-                    <i class="fa-solid fa-eye-slash" id="show-password-1"></i>
-                        </div>
-                    <div class="form_each">
-                    <input type="password" id="newPassword" name="newPassword" placeholder="Re-Enter New password" required>
-                    <i class="fa-solid fa-eye-slash" id="show-password-2"></i>
-
-                    </div>
-
-                 <!--   <button type="submit" class="btn-login">Confirm</button> -->
-                  
-                    <!-- <div class="options">
-                     <a href="../Methods/delete-acc.php" class="delete">Delete account</a>
-                    </div> -->
-
-                    <div class="notifier-error">
-                        <?php
-                            if (isset($_SESSION['StatusError'])) {
-                            
-                                echo $_SESSION['StatusError']; 
-                                unset($_SESSION['StatusError']);
-                            }
-                            ?>
-                        </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="title">
-            <div class="title-wrapper">
-                <h2>Welcome</h2>
-                <h1><?php echo $_SESSION["username"] ?> </h1>
-                <p>Warning: Page is still in construction!</p>
-
-            </div>
-        </div>
-
-    </section>
+    
 </body>
 
     <script src="../js/password.js"></script>
