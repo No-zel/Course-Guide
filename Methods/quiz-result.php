@@ -144,5 +144,38 @@ $TopDiscription = $categories[0]['discription'];
 $Index = rand(0,count($TopCategory)-1);
 
 
-echo'Recommended Field: ',$TopCategory[$Index],'<br>','Discription: ',$TopDiscription[$Index];
+
+
+
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Pages/style.css">
+    <title>Congratulations | View Results</title>
+</head>
+<body>
+
+
+
+    <div class="result-container">
+        <?php 
+            echo' <h1 class="field-title"> Recommended Field: </h1>',   $TopCategory[$Index] ,
+            '<br>','
+            <h2 class="descrip-title"> Description: </h2>', $TopDiscription[$Index];
+        ?>
+    </div>
+    
+</body>
+</html>

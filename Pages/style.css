@@ -1105,6 +1105,27 @@ table td {
 
 
 
+/* Result Page */
+.result-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-accent-color);
+    text-align: center;
+    max-width: var(--desktop-max-width);
+    margin: 0 auto;
+}
+.field-title{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.descrip-title{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 
 
 
