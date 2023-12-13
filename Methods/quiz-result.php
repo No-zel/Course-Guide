@@ -76,6 +76,7 @@ if ($Q7Answer == "E") { $Creative++;}
 if ($Q7Answer == "F") { $Organized++;}
 
 
+
 //ARRAYS RECOMENDATION
 $crea = array("Mass Communication", "Fine Arts", "Architecture", "Multimedia Arts", "Fashion Design");
 $org = array("Legal Management", "History", "Human Resources", "Public Administration", "Library and Information Science");
@@ -83,7 +84,14 @@ $analy = array("Computer Science", "Statistics", "Physics", "Mathematics", "Mech
 $soc = array("Education", "Nursing", "Medicine", "Veterinary Medicine", "Psychology","Hotel and Restaurant Management/Tourism");
 $prac = array("Sports Science", "Maritime", "Criminology", "Sports Management", "Agriculture", "Fisheries");
 $lead = array("Marketing", "Business", "Management", "Accountancy", "Entrepreneurship");
-//ARRAYS
+//ARRAYS SCHOOL
+
+$csch = array("University of the Philippines Diliman", "University of the Philippines Diliman", "Mapúa University","De La Salle-College of Saint Benilde - School of Design and Arts.", "De La Salle-College");
+$orgsch = array("De La Salle University", "University of the Philippines Diliman.", "De La Salle-College of Saint Benilde Taft Campus", "University of Mindanao", "University of the Philippines Diliman");
+$analysch = array("De La Salle University", "University of the Philippines Diliman", "University of the Philippines Diliman", "University of the Philippines Diliman", "Technological institute of the Philippines", "De La Salle University", "University of the Philippines Diliman");
+$socsch = array("University of Santo Tomas", "Central Philippine University", "University of the Philippines Los Baños", "University of the Philippines Diliman", "Lyceum of the Philippines university");
+$pracsch = array("Saint Louis University", "Asian Institute of Maritime Studies", "Tarlac State University", "Central Philippine University", "University of Southern Mindanao", "Pangasinan State University - Binmaley Campus");
+$leadsch = array("De La Salle University", "Asian Institute of Management", "La Salle University", "University of Santo Tomas", "De La Salle University");
 //ARRAYS DISCRIPTION
 $dcrea = array("This program is designed to prepare students for a career in media, communications, film & TV production, and journalism.", "A fine arts degree is for individuals who want to pursue careers in the arts, encompassing fields such as painting, sculpting, dance, theater, and other artistic pursuits. Graduates of the Fine Arts program emerge well-prepared for a range of creative professions, including roles as professional artists, illustrators, designers, curators, and educators. This program cultivates an enthusiasm for self-expression, nurtures a discerning eye, and equips individuals to make meaningful contributions to the realm of visual arts.
 ", "Architecture is the design and construction of buildings, combining art, mathematics, science, and logistics. During an architecture degree, students will learn how to draw accurate designs of buildings either by hand or with computer software. Graduates of the Architecture program are well-prepared for diverse career paths, including architectural design, urban planning, sustainable design, and project management.", "Multimedia Arts programs are equipped for careers in graphic design, digital media production, animation, web design, and interactive media. This program emphasizes technical skills and nurtures creativity, adaptability, and a deep understanding of multimedia arts in the contemporary landscape.
@@ -125,13 +133,15 @@ $dlead = array("Marketing courses cover a wide range of topics related to promot
 //ARRAYS
 
 
+
+
 $categories = array(
-    array('name' => 'Creative', 'value' => $Creative,'category' => $crea,'discription' => $dcrea),
-    array('name' => 'Organized', 'value' => $Organized,'category' => $org,'discription' => $org),
-    array('name' => 'Analytical', 'value' => $Analytical,'category' => $analy,'discription' => $danaly),
-    array('name' => 'Social', 'value' => $Social,'category' => $soc,'discription' => $dsoc),
-    array('name' => 'Practical', 'value' => $Practical,'category' => $prac,'discription' => $dprac),
-    array('name' => 'Enterprising', 'value' => $Enterprising,'category' => $lead,'discription' => $dlead)
+    array('name' => 'Creative', 'value' => $Creative,'category' => $crea,'discription' => $dcrea, 'school' => $csch),
+    array('name' => 'Organized', 'value' => $Organized,'category' => $org,'discription' => $org, 'school' => $orgsch),
+    array('name' => 'Analytical', 'value' => $Analytical,'category' => $analy,'discription' => $danaly, 'school' => $analysch),
+    array('name' => 'Social', 'value' => $Social,'category' => $soc,'discription' => $dsoc, 'school' => $socsch),
+    array('name' => 'Practical', 'value' => $Practical,'category' => $prac,'discription' => $dprac, 'school' => $pracsch),
+    array('name' => 'Enterprising', 'value' => $Enterprising,'category' => $lead,'discription' => $dlead, 'school' => $leadsch)
 );
 
 //SORT THE ARRAYS
@@ -141,8 +151,11 @@ usort($categories, function ($a, $b) {
 //FUNCTION RECOMENDATION
 $TopCategory = $categories[0]['category'];
 $TopDiscription = $categories[0]['discription'];
+$TopSchool = $categories[0]['school'];
 $Index = rand(0,count($TopCategory)-1);
 
 
-echo'Recommended Field: ',$TopCategory[$Index],'<br>','Discription: ',$TopDiscription[$Index];
+echo'Recommended Field: ',$TopCategory[$Index],'<br>','Discription: ',$TopDiscription[$Index], '<br>', 'School: ', $TopSchool[$Index];
 ?>
+
+
