@@ -1022,7 +1022,7 @@ table th,
 table td {
     font-size: 1rem;
     text-align: left;
-    padding: 13px 40px;
+    padding: 13px 26px;
     color: var(--table-text-color);
 }
 
@@ -1036,6 +1036,20 @@ table td {
     border-bottom: 1px solid var(--table-border-color);
 
 }
+
+.admin-delete{
+    background: none;
+    border: 1px solid var(--dark-outline-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: var(--white-accent-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.admin-delete:hover{
+   background-color: rgb(185, 28, 28);
+}
+
 
 .pages {
     padding-top: 15px;
