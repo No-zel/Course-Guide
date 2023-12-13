@@ -45,7 +45,7 @@ try {
     $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT USERNAME, ACTION, datatime FROM UsersLog";
+    $sql = "SELECT ID, Username, Action, DateTime FROM UsersLog";
     $result = $conn->query($sql);
     $logData = $result->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -123,6 +123,7 @@ $totalPages = ceil(count($logData) / $maxpage);
           <th colspan="3" class="log-history">Log History</th>
 
         <tr class="responsive-display-none">
+            <th>ID</th>
             <th>User</th>
             <th>Activity</th>
             <th>Date</th>
@@ -130,9 +131,10 @@ $totalPages = ceil(count($logData) / $maxpage);
         </thead>
         <?php foreach ($logs as $entry): ?>
             <tr>
-                <td data-title="Username" ><?= $entry['USERNAME'] ?></td>
-                <td data-title="Activity"><?= $entry['ACTION'] ?></td>
-                <td data-title="Date"><?= $entry['datatime'] ?></td>
+                <td data-title="ID" ><?= $entry['ID'] ?></td>
+                <td data-title="Username" ><?= $entry['Username'] ?></td>
+                <td data-title="Activity"><?= $entry['Action'] ?></td>
+                <td data-title="Date"><?= $entry['DateTime'] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
