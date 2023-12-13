@@ -68,7 +68,7 @@ try {
 
 
 // NEW PHP VARIABLES OF PAGINATION
-$maxpage = 5;
+$maxpage = 3;
 $page = isset($_GET['pageindex']) ? intval($_GET['pageindex']) : 1;
 
 $index = ($page - 1) * $maxpage;
@@ -86,7 +86,7 @@ if ($page > $totalPages) {
     $page = 1;
 }
 
-$pagesToShow = 3; 
+$pagesToShow = 5; 
 
 $startPage = max(1, $page - floor($pagesToShow / 2));
 $endPage = min($startPage + $pagesToShow - 1, $totalPages);
@@ -150,7 +150,7 @@ $endPage = min($startPage + $pagesToShow - 1, $totalPages);
        
         <thead>
        
-          <th colspan="3" class="log-history">Log History</th>
+          <th colspan="4" class="log-history">Log History</th>
 
         <tr class="responsive-display-none">
             <th>ID</th>

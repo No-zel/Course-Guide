@@ -53,15 +53,27 @@ try {
 }
 
 $maxpage = 5;
-$page = isset($_GET['pageindex']) ? intval($_GET['pageindex']):1;
+$page = isset($_GET['pageindex']) ? intval($_GET['pageindex']) : 1;
 
 $index = ($page - 1) * $maxpage;
 
-// Get the logs for the current page
+
 $logs = array_slice($logData, $index, $maxpage);
 
-// calculates for the pages
+
 $totalPages = ceil(count($logData) / $maxpage);
+
+
+if ($page > $totalPages) {
+    $page = $totalPages;
+} elseif ($page < 1) {
+    $page = 1;
+}
+
+$pagesToShow = 5; 
+
+$startPage = max(1, $page - floor($pagesToShow / 2));
+$endPage = min($startPage + $pagesToShow - 1, $totalPages);
 
 ?>
 
@@ -169,6 +181,22 @@ $totalPages = ceil(count($logData) / $maxpage);
      </table>
   </div>
 
+         <!-- Pagination links -->
+         <div class="pagination">
+    <?php if ($page > 1): ?>
+        <a href="?pageindex=<?= ($page - 1) ?>" class="prev">&laquo; Previous</a>
+    <?php endif; ?>
+
+    <?php for ($i = $startPage; $i <= $endPage; $i++): ?>
+        <a href="?pageindex=<?= $i ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+            <?= $i ?>
+        </a>
+    <?php endfor; ?>
+
+    <?php if ($page < $totalPages): ?>
+        <a href="?pageindex=<?= ($page + 1) ?>" class="next">Next &raquo;</a>
+    <?php endif; ?>
+</div>
     
 </body>
 
