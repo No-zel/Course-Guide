@@ -52,16 +52,44 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
+// OLD PHP VARIABLES OF PAGINATION
+// $maxpage = 5;
+// $page = isset($_GET['pageindex']) ? intval($_GET['pageindex']):1;
+
+
+// $index = ($page - 1) * $maxpage;
+
+// // Get the logs for the current page
+// $logs = array_slice($logData, $index, $maxpage);
+
+// // calculates for the pages
+// $totalPages = ceil(count($logData) / $maxpage);
+
+
+
+// NEW PHP VARIABLES OF PAGINATION
 $maxpage = 5;
-$page = isset($_GET['pageindex']) ? intval($_GET['pageindex']):1;
+$page = isset($_GET['pageindex']) ? intval($_GET['pageindex']) : 1;
 
 $index = ($page - 1) * $maxpage;
 
-// Get the logs for the current page
+
 $logs = array_slice($logData, $index, $maxpage);
 
-// calculates for the pages
+
 $totalPages = ceil(count($logData) / $maxpage);
+
+
+if ($page > $totalPages) {
+    $page = $totalPages;
+} elseif ($page < 1) {
+    $page = 1;
+}
+
+$pagesToShow = 3; 
+
+$startPage = max(1, $page - floor($pagesToShow / 2));
+$endPage = min($startPage + $pagesToShow - 1, $totalPages);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,6 +106,8 @@ $totalPages = ceil(count($logData) / $maxpage);
     <title>Log Data</title>
 
 </head>
+
+
 <body>
 
      <header>
@@ -137,13 +167,26 @@ $totalPages = ceil(count($logData) / $maxpage);
         <?php endforeach; ?>
     </table>
     
-    <!-- Pagination links -->
-    <div class="pages">
-        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="?pageindex=<?= $i ?>"><?= $i ?></a>
-        <?php endfor; ?>
-        <a href="#"> Pages </a>
-    </div>
+       <!-- Pagination links -->
+    <div class="pagination">
+    <?php if ($page > 1): ?>
+        <a href="?pageindex=<?= ($page - 1) ?>" class="prev">&laquo; Previous</a>
+    <?php endif; ?>
+
+    <?php for ($i = $startPage; $i <= $endPage; $i++): ?>
+        <a href="?pageindex=<?= $i ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+            <?= $i ?>
+        </a>
+    <?php endfor; ?>
+
+    <?php if ($page < $totalPages): ?>
+        <a href="?pageindex=<?= ($page + 1) ?>" class="next">Next &raquo;</a>
+    <?php endif; ?>
+</div>
+    
+ 
+
+    
 </div>
 <script src="../js/nav.js"> </script>
 <script>

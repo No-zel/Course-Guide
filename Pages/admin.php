@@ -142,30 +142,32 @@ $totalPages = ceil(count($logData) / $maxpage);
     </header>
 
 
-    <table>
-       
-       <thead>
-      
-         <th colspan="3" class="log-history">List of users</th>
-
-       <tr class="responsive-display-none">
-           <th>ID</th>
-           <th>First Name</th>
-           <th>Last Name</th>
-           <th>Username</th>
-           <th>Email</th>
-       </tr>
-       </thead>
-       <?php foreach ($logs as $entry): ?>
-           <tr>
-               <td data-title="ID" ><?= $entry['ID'] ?></td>
-               <td data-title="First Name"><?= $entry['FNAME'] ?></td>
-               <td data-title="Last Name"><?= $entry['LNAME'] ?></td>
-               <td data-title="Username"><?= $entry['USERNAME'] ?></td>
-               <td data-title="Email"><?= $entry['EMAIL'] ?></td>
-           </tr>
-       <?php endforeach; ?>
-   </table>
+  <div class="log-container">
+      <table>
+         
+         <thead>
+        
+           <th colspan="5" class="log-history">List of users</th>
+    
+         <tr class="responsive-display-none">
+             <th>ID</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>Username</th>
+             <th>Email</th>
+         </tr>
+         </thead>
+         <?php foreach ($logs as $entry): ?>
+             <tr>
+                 <td data-title="ID" ><?= $entry['ID'] ?></td>
+                 <td data-title="First Name"><?= $entry['FNAME'] ?></td>
+                 <td data-title="Last Name"><?= $entry['LNAME'] ?></td>
+                 <td data-title="Username"><?= $entry['USERNAME'] ?></td>
+                 <td data-title="Email"><?= $entry['EMAIL'] ?></td>
+             </tr>
+         <?php endforeach; ?>
+     </table>
+  </div>
 
     
 </body>
