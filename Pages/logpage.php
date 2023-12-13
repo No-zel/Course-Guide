@@ -150,7 +150,7 @@ $endPage = min($startPage + $pagesToShow - 1, $totalPages);
        
         <thead>
        
-          <th colspan="3" class="log-history">Log History</th>
+          <th colspan="4" class="log-history">Log History</th>
 
         <tr class="responsive-display-none">
             <th>ID</th>
