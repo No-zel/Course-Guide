@@ -172,7 +172,82 @@ $Index = rand(0,count($TopCategory)-1);
 
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../Pages/style.css">
+
+     <!-- Js Chart CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Congratulations | View Results</title>
+
+    <!-- <style>
+
+
+   
+        .result-main-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 80vh;
+            gap: 20px;
+        }
+        .chart-container{
+               border: 1px solid var(--dark-outline-color);
+               padding: 15px;
+               border-radius: 12px;
+                
+            }
+
+            .field-title {
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            .descrip-title {
+                font-size: 1rem;
+                margin: 0;
+             
+            }
+            .top-category{
+                font-size: 2.5rem;
+                font-weight: 700;
+                padding-bottom: 20px;
+            }
+            .top-description{
+                font-size: 15px ;
+                padding-bottom: 20px;
+            }
+            .top-school{
+                font-size: 2rem;
+                font-weight: 700;
+                padding-bottom: 15px;
+            }
+            .p-titles{
+                font-size: 1.2rem;
+            }
+
+            @media (max-width: 1445px) {
+            .result-main-container {
+                grid-template-columns:  1fr;
+                padding: 25px;
+            }
+            .result-container{
+                padding: 20px;
+               
+            }
+            .chart-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #myChart{
+                width: 329px;
+                height: 164px;
+            }
+        }
+    </style> -->
 </head>
 <body>
     <header >
@@ -182,15 +257,66 @@ $Index = rand(0,count($TopCategory)-1);
     </header>
 
 
-    <div class="result-container">
-        <?php 
-            echo' <h1 class="field-title"> Recommended Field: </h1>',   $TopCategory[$Index] ,
-            '<br>','
-            <h2 class="descrip-title"> Description: </h2>', $TopDiscription[$Index],
-            '<br>','
-            <h2 class="descrip-title"> School: </h2>', $TopSchool[$Index];
-        ?>
+    <div class="result-main-container">
+        <div class="result-container">
+            <?php 
+               echo '<p class="field-title p-titles">Recommended Field</p>','<span class="top-category">', $TopCategory[$Index], '</span>',
+              
+               '<span class="top-description">', $TopDiscription[$Index], '</span>',
+           
+               '<p class="descrip-title p-titles"> Recommended School</p>','<span class="top-school">', $TopSchool[$Index], '</span>';
+            ?>
+        
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
     </div>
+
+
+    <script>
+        
+
+        const labels = ['','Social', 'Practical', 'Enterprising', 'Analytical', 'Creative', 'Organize',];
+        const data = {
+        labels: labels,
+        datasets: [{
+            label: '<?=$TopCategory[$Index] ?> is your top choice based on your answers', 
+            data: [0, <?= $Social ?>, <?= $Practical ?>, <?= $Enterprising ?>, <?= $Analytical ?>, <?= $Creative ?>, <?= $Organized ?>],
+            fill: false,
+            borderColor: '#007bff',
+            backgroundColor: '#bad6ff',
+            tension: 0.1
+        }]
+        };
+
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                scales: {
+                    x: {
+                        grid: {
+                            color: '#222222', // Change the color of x-axis gridlines to white
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: '#222222', // Change the color of y-axis gridlines to white
+                        }
+                    }
+                }
+            }
+        };
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, config)
+ 
+
+      </script>
     
 </body>
 </html>
