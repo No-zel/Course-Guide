@@ -262,18 +262,18 @@ if (isset($_SESSION['UserID'])) {
 
                 <div class="footer-third">
                     <h1>Terms of Use</h1>
-                    <a href="#" target="_blank">Services</a>
+                    <a href="./Pages/terms.php" target="_blank">Services</a>
                 </div>
 
                 <div class="footer-fourth">
                     <h1>Policy</h1>
-                    <a href="#" target="_blank">Text here</a>
+                    <a href="./Pages/policy.php" target="_blank">Website Policy</a>
 
                 </div>
 
                 <div class="footer-fifth">
                     <h1>Community</h1>
-                    <a href="#" target="_blank">Discord</a>
+                    <a href="https://discord.gg/a2B3qg3N" target="_blank">Discord</a>
 
                 </div>
             </div>
