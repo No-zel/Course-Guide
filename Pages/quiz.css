@@ -146,3 +146,15 @@ body {
   appearance: none;
   border: none;
  }
+ .button-container-submit{
+  display: flex;
+  width: 100%;
+ }
+
+ @media (max-width: 450px){
+  .main-container {
+    padding: 20px;
+
+
+  }
+ }
