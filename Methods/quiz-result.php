@@ -1,13 +1,13 @@
 <?php 
 
 //Getting the Answer from Radio Button
-$Q1Answer = $_POST['Q1-answer'];
-$Q2Answer = $_POST['Q2-answer'];
-$Q3Answer = $_POST['Q3-answer'];
-$Q4Answer = $_POST['Q4-answer'];
-$Q5Answer = $_POST['Q5-answer'];
-$Q6Answer = $_POST['Q6-answer'];
-$Q7Answer = $_POST['Q7-answer'];
+$Q1Answer = $_POST['Q1-answer']  ?? "";
+$Q2Answer = $_POST['Q2-answer']  ?? "";
+$Q3Answer = $_POST['Q3-answer']  ?? "";
+$Q4Answer = $_POST['Q4-answer']  ?? "";
+$Q5Answer = $_POST['Q5-answer']  ?? "";
+$Q6Answer = $_POST['Q6-answer']  ?? "";
+$Q7Answer = $_POST['Q7-answer']  ?? "";
 
 
 //Course Category
