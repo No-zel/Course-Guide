@@ -1104,32 +1104,85 @@ table td {
     background-color: #272727;
 }
 
-/* Result Page */
+/* Result Page ======================================================================== */
+
+
 .result-container {
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
+    color: var(--white-accent-color);
+    text-align: left;
+    padding-right: 65px;
+
+}
+
+
+.result-main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
-    color: var(--white-accent-color);
-    text-align: center;
-    max-width: var(--desktop-max-width);
+    max-width: 1400px;
     margin: 0 auto;
+    min-height: 80vh;
+    gap: 20px;
 }
+.chart-container{
+       border: 1px solid var(--dark-outline-color);
+       padding: 15px;
+       border-radius: 12px;
+        
+    }
 
-.field-title {
-    font-size: 1rem;
-    font-weight: 700;
-}
+    .field-title {
+        font-size: 1rem;
+        margin: 0;
+    }
 
-.descrip-title {
-    font-size: 1rem;
-    font-weight: 700;
-}
+    .descrip-title {
+        font-size: 1rem;
+        margin: 0;
+     
+    }
+    .top-category{
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding-bottom: 20px;
+    }
+    .top-description{
+        font-size: 15px ;
+        padding-bottom: 20px;
+    }
+    .top-school{
+        font-size: 2rem;
+        font-weight: 700;
+        padding-bottom: 15px;
+    }
+    .p-titles{
+        font-size: 1.2rem;
+    }
 
 
-
-
+    @media (max-width: 1445px) {
+        .result-main-container {
+            grid-template-columns:  1fr;
+            padding: 25px;
+        }
+        .result-container{
+            padding: 20px;
+           
+        }
+        .chart-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #myChart{
+            width: 329px;
+            height: 164px;
+        }
+    }
 
 
 @media (max-width: 1000px) {
