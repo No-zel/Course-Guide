@@ -262,7 +262,7 @@ if (isset($_SESSION['UserID'])) {
 
                 <div class="footer-third">
                     <h1>Terms of Use</h1>
-                    <a href="./Pages/terms.php" target="_blank">Services</a>
+                    <a href="./Pages/terms.php" target="_blank">Terms and Privacy</a>
                 </div>
 
                 <div class="footer-fourth">
