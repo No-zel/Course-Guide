@@ -76,7 +76,6 @@ if ($Q7Answer == "E") { $Creative++;}
 if ($Q7Answer == "F") { $Organized++;}
 
 
-
 //ARRAYS RECOMENDATION
 $crea = array("Mass Communication", "Fine Arts", "Architecture", "Multimedia Arts", "Fashion Design");
 $org = array("Legal Management", "History", "Human Resources", "Public Administration", "Library and Information Science");

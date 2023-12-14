@@ -177,7 +177,7 @@ $endPage = min($startPage + $pagesToShow - 1, $totalPages);
                  <td data-title="Last Name"><?= $entry['LNAME'] ?></td>
                  <td data-title="Username"><?= $entry['USERNAME'] ?></td>
                  <td data-title="Email"><?= $entry['EMAIL'] ?></td>
-                 <td data-title="Manage"> <button class="admin-delete"> Delete </button> </th>
+                 <td data-title="Manage"> <button class="admin-delete"> <a href='../Methods/delete.php?id="<?= $entry['ID'] ?>"'> Delete </a> </button> </th>
              </tr>
          <?php endforeach; ?>
      </table>
