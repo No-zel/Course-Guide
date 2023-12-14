@@ -176,7 +176,7 @@ $Index = rand(0,count($TopCategory)-1);
      <!-- Js Chart CDN -->
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>Congratulations | View Results</title>
+    <title>You Got, <?= $TopCategory[$Index] ?>!</title>
 
     <!-- <style>
 

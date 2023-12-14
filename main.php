@@ -258,7 +258,6 @@ if (isset($_SESSION['UserID'])) {
                     <a href="#">Home</a>
                     <a href="#">About</a>
                     <a href="#">Features</a>
-                    <a href="#">Process</a>
                 </div>
 
                 <div class="footer-third">
